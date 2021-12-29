@@ -45,6 +45,10 @@ class Trailer
             }
             cast = cast + member.element!.text
             loop = loop + 1
+            if loop > 5
+            {
+                break;
+            }
         }
     }
     

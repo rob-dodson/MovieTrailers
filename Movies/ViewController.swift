@@ -16,13 +16,11 @@ class ViewController: NSViewController {
     @IBOutlet weak var studioLabel: NSTextField!
     @IBOutlet weak var directorLabel: NSTextField!
     @IBOutlet weak var castLabel: NSTextField!
-    @IBOutlet weak var descriptionLabel: NSTextField!
     @IBOutlet weak var trailerList: NSCollectionView!
-    
     @IBOutlet weak var imageView: NSImageView!
     @IBOutlet weak var infoLabel: NSTextField!
-    
-    
+
+    @IBOutlet weak var descriptionText: NSTextField!
     
     var item : AVPlayerItem!
     
@@ -72,17 +70,17 @@ class ViewController: NSViewController {
                 trailers.append(trailer)
             }
         }
-
         let index = Int(arc4random_uniform(UInt32(trailers.count)))
         let trailer = trailers[index]
         titleLabel.stringValue = trailer.title
         studioLabel.stringValue = trailer.studio
         directorLabel.stringValue = trailer.director
-        descriptionLabel.stringValue = trailer.description
+        descriptionText.stringValue = trailer.description
         castLabel.stringValue = trailer.cast
         imageView.image = NSImage(contentsOf: URL(string: trailer.largePoster)!)
         
-        infoLabel.stringValue = String(format: "%@  %@  %@  %@", trailer.genre,trailer.releaseDate,trailer.runtime,trailer.rating)
+        
+        infoLabel.stringValue = String(format: "%@ ・ %@ ・ %@ ・ %@", trailer.genre,trailer.releaseDate,trailer.runtime,trailer.rating)
         
         item = AVPlayerItem(url: NSURL.init(string:trailer.preview)! as URL)
         /*

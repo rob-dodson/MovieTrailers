@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "XMLMapper",
+        "repositoryURL": "https://github.com/gcharita/XMLMapper.git",
+        "state": {
+          "branch": null,
+          "revision": "f3b02419a42d25332f1beecc2b1aee34ebb7afa0",
+          "version": "2.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

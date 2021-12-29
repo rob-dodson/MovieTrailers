@@ -14,14 +14,14 @@ class ViewController: NSViewController {
     @IBOutlet weak var player: Player!
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var studioLabel: NSTextField!
-    @IBOutlet weak var ratingLabel: NSTextField!
-    @IBOutlet weak var runtimeLabel: NSTextField!
-    @IBOutlet weak var releaseDateLabel: NSTextField!
     @IBOutlet weak var directorLabel: NSTextField!
     @IBOutlet weak var castLabel: NSTextField!
     @IBOutlet weak var descriptionLabel: NSTextField!
     @IBOutlet weak var trailerList: NSCollectionView!
-    @IBOutlet weak var imageWell: NSImageView!
+    
+    @IBOutlet weak var imageView: NSImageView!
+    @IBOutlet weak var infoLabel: NSTextField!
+    
     
     
     var item : AVPlayerItem!
@@ -76,16 +76,16 @@ class ViewController: NSViewController {
         let index = Int(arc4random_uniform(UInt32(trailers.count)))
         let trailer = trailers[index]
         titleLabel.stringValue = trailer.title
-        ratingLabel.stringValue = trailer.rating
-        runtimeLabel.stringValue = trailer.runtime
         studioLabel.stringValue = trailer.studio
-        releaseDateLabel.stringValue = trailer.releaseDate
         directorLabel.stringValue = trailer.director
         descriptionLabel.stringValue = trailer.description
-        imageWell.image = NSImage(contentsOf: URL(string: trailer.poster)!)
+        castLabel.stringValue = trailer.cast
+        imageView.image = NSImage(contentsOf: URL(string: trailer.largePoster)!)
+        
+        infoLabel.stringValue = String(format: "%@  %@  %@  %@", trailer.genre,trailer.releaseDate,trailer.runtime,trailer.rating)
         
         item = AVPlayerItem(url: NSURL.init(string:trailer.preview)! as URL)
-        
+        /*
         _ = item?.observe(\AVPlayerItem.status, changeHandler:
 		{ observedPlayerItem, change in
             if (observedPlayerItem.status == AVPlayerItem.Status.readyToPlay) 
@@ -93,6 +93,7 @@ class ViewController: NSViewController {
                 print("Current stream duration \(observedPlayerItem.duration.seconds)")
             }
         })
+         */
         
         player.player = AVPlayer(playerItem: item)
         

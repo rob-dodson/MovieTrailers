@@ -7,10 +7,22 @@
 
 import Cocoa
 import AVFoundation
+import XMLMapper
+import Trailer
 
 class ViewController: NSViewController {
 
     @IBOutlet weak var player: Player!
+    @IBOutlet weak var titleLabel: NSTextField!
+    @IBOutlet weak var studioLabel: NSTextField!
+    @IBOutlet weak var ratingLabel: NSTextField!
+    @IBOutlet weak var runtimeLabel: NSTextField!
+    @IBOutlet weak var releaseDateLabel: NSTextField!
+    @IBOutlet weak var directorLabel: NSTextField!
+    @IBOutlet weak var castLabel: NSTextField!
+    @IBOutlet weak var descriptionLabel: NSTextField!
+    @IBOutlet weak var trailerList: NSCollectionView!
+    
     
     var item : AVPlayerItem!
     
@@ -32,6 +44,9 @@ class ViewController: NSViewController {
 
     func play()
     {
+        
+        let trailers = XMLMapper<Trailer>().map(XMLfile: "https://trailers.apple.com/trailers/home/xml/current_720p.xml")
+
         item = AVPlayerItem(url: NSURL.init(string: "https://trailers.apple.com/movies/paramount/clifford-the-big-red-dog/clifford-the-big-red-dog-trailer-2_h640w.mov")! as URL)
         
         

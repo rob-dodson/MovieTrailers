@@ -700,27 +700,27 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="41" y="99"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="983" height="663"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWu-JN-xls">
-                                <rect key="frame" x="17" y="564" width="31" height="16"/>
+                                <rect key="frame" x="255" y="615" width="54" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Title" id="qR3-uE-Zan">
-                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <font key="font" metaFont="systemSemibold" size="25"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="60V-ir-3YY">
-                                <rect key="frame" x="18" y="546" width="51" height="16"/>
+                                <rect key="frame" x="302" y="573" width="51" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="runtime" id="qdp-s8-MRR">
                                     <font key="font" metaFont="system"/>
@@ -729,7 +729,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LS5-Ti-tIn">
-                                <rect key="frame" x="18" y="522" width="40" height="16"/>
+                                <rect key="frame" x="254" y="573" width="40" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="rating" id="jMu-pS-lBJ">
                                     <font key="font" metaFont="system"/>
@@ -738,7 +738,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DSN-YS-t2d">
-                                <rect key="frame" x="18" y="498" width="44" height="16"/>
+                                <rect key="frame" x="254" y="591" width="44" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Studio" id="NCP-dU-sKe">
                                     <font key="font" metaFont="system"/>
@@ -747,7 +747,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQw-Ff-Hub">
-                                <rect key="frame" x="18" y="474" width="76" height="16"/>
+                                <rect key="frame" x="357" y="573" width="76" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Relase Date" id="XpC-c8-xXF">
                                     <font key="font" metaFont="system"/>
@@ -756,7 +756,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-Sg-7hC">
-                                <rect key="frame" x="18" y="450" width="53" height="16"/>
+                                <rect key="frame" x="255" y="549" width="53" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Director" id="0Ez-6Q-tTw">
                                     <font key="font" metaFont="system"/>
@@ -765,7 +765,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbs-sn-D5d">
-                                <rect key="frame" x="131" y="429" width="292" height="85"/>
+                                <rect key="frame" x="255" y="395" width="397" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" selectable="YES" title="Description" id="gid-ed-y0W">
                                     <font key="font" metaFont="system"/>
@@ -773,13 +773,8 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JzC-RM-tek">
-                                <rect key="frame" x="127" y="529" width="108" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="ALO-hv-71J"/>
-                            </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Knk-oW-KuN">
-                                <rect key="frame" x="22" y="426" width="32" height="16"/>
+                                <rect key="frame" x="255" y="525" width="32" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Cast" id="LDN-FZ-NJl">
                                     <font key="font" metaFont="system"/>
@@ -788,18 +783,56 @@
                                 </textFieldCell>
                             </textField>
                             <avPlayerView fixedFrame="YES" controlsStyle="inline" showsFullScreenToggleButton="YES" showsSharingServiceButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-QL-3hW" customClass="Player" customModule="Movies" customModuleProvider="target">
-                                <rect key="frame" x="67" y="117" width="480" height="270"/>
+                                <rect key="frame" x="256" y="37" width="667" height="333"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </avPlayerView>
+                            <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-HU-D5V">
+                                <rect key="frame" x="20" y="45" width="215" height="586"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                <clipView key="contentView" id="W2U-m0-N7M">
+                                    <rect key="frame" x="1" y="1" width="213" height="584"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="4nX-VK-hAk">
+                                            <rect key="frame" x="0.0" y="0.0" width="213" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfColumns="1" id="s0M-jL-zDp"/>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="PcP-Cl-COg">
+                                    <rect key="frame" x="1" y="514" width="213" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="35t-Ck-xOS">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JzC-RM-tek">
+                                <rect key="frame" x="682" y="392" width="233" height="254"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="ALO-hv-71J"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="castLabel" destination="Knk-oW-KuN" id="uUk-pn-nX6"/>
+                        <outlet property="descriptionLabel" destination="tbs-sn-D5d" id="zl6-g5-0cq"/>
+                        <outlet property="directorLabel" destination="Knk-oW-KuN" id="xkI-y6-AIb"/>
                         <outlet property="player" destination="Vkp-QL-3hW" id="H5Q-Q3-URh"/>
+                        <outlet property="ratingLabel" destination="LS5-Ti-tIn" id="TKp-CT-umj"/>
+                        <outlet property="releaseDateLabel" destination="aQw-Ff-Hub" id="sNa-kM-Ww9"/>
+                        <outlet property="runtimeLabel" destination="60V-ir-3YY" id="HaC-Pv-XFK"/>
+                        <outlet property="studioLabel" destination="DSN-YS-t2d" id="aEH-YG-pvE"/>
+                        <outlet property="titleLabel" destination="oWu-JN-xls" id="ahh-wq-gjb"/>
+                        <outlet property="trailerList" destination="4nX-VK-hAk" id="amn-38-dD6"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="109" y="772.5"/>
+            <point key="canvasLocation" x="-680.5" y="958.5"/>
         </scene>
     </scenes>
 </document>

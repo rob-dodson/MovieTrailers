@@ -6,27 +6,12 @@
 //
 
 import Foundation
-import XMLMapper
 
-class TrailerList : XMLMappable
+import SWXMLHash
+
+
+class Trailer
 {
-    var nodeName: String!
-
-    var trailers: [Trailer]?
-
-    required init?(map: XMLMap) {}
-
-    func mapping(map: XMLMap)
-    {
-        trailers <- map["movieinfo"]
-    }
-}
-
-
-class Trailer: XMLMappable
-{
-    var nodeName    : String!
-    
     var title       : String!
     var runtime     : String!
     var rating      : String!
@@ -43,26 +28,27 @@ class Trailer: XMLMappable
     var preview     : String!
     
     
-    required init?(map: XMLMap) {}
-
-    
-    func mapping(map: XMLMap)
+    func mapdata(map: XMLIndexer)
     {
-        nodeName <- map["name"]
-        
-        title       <- map["title"]
-        runtime     <- map["runtime"]
-        rating      <- map["rating"]
-        studio      <- map["studio"]
-        postDate    <- map["postDate"]
-        releaseDate <- map["releaseDate"]
-        copyright   <- map["copyright"]
-        director    <- map["director"]
-        description <- map["description"]
-        cast        <- map["cast"]
-        genre       <- map["genre"]
-        poster      <- map["poster.location"]
-        largePoster <- map["poster.xlarge"]
-        preview     <- map["preview"]
+        cast        = map["cast"].element!.text
+        genre       = map["genre"].element!.text
+        poster      = map["poster"]["location"].element!.text
+        largePoster = map["poster"]["xlarge"].element!.text
+        preview     = map["preview"]["large"].element!.text
     }
+    
+    
+    func mapinfo(map: XMLIndexer)
+    {
+       title       = map["title"].element!.text
+       runtime     = map["runtime"].element!.text
+       rating      = map["rating"].element!.text
+       studio      = map["studio"].element!.text
+       postDate    = map["postdate"].element!.text
+       releaseDate = map["releasedate"].element!.text
+       copyright   = map["copyright"].element!.text
+       director    = map["director"].element!.text
+       description = map["description"].element!.text
+      
+   }
 }

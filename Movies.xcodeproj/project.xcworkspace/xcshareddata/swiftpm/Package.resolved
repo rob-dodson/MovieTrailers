@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "XMLMapper",
-        "repositoryURL": "https://github.com/gcharita/XMLMapper.git",
+        "package": "SWXMLHash",
+        "repositoryURL": "https://github.com/drmohundro/SWXMLHash.git",
         "state": {
           "branch": null,
-          "revision": "f3b02419a42d25332f1beecc2b1aee34ebb7afa0",
-          "version": "2.0.0"
+          "revision": "6469881a3f30417c5bb02404ea4b69207f297592",
+          "version": "6.0.0"
         }
       }
     ]

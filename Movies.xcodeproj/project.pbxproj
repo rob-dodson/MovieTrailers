@@ -12,8 +12,8 @@
 		AE050A11277B833D00E696F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE050A10277B833D00E696F6 /* Assets.xcassets */; };
 		AE050A14277B833D00E696F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE050A12277B833D00E696F6 /* Main.storyboard */; };
 		AE050A1C277B859800E696F6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE050A1B277B859800E696F6 /* Player.swift */; };
-		AEC1E1B4277BAC760084C4C4 /* XMLMapper in Frameworks */ = {isa = PBXBuildFile; productRef = AEC1E1B3277BAC760084C4C4 /* XMLMapper */; };
 		AEC1E1B6277BACC90084C4C4 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC1E1B5277BACC90084C4C4 /* Trailer.swift */; };
+		AEC1E1B9277CC8B90084C4C4 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = AEC1E1B8277CC8B90084C4C4 /* SWXMLHash */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEC1E1B4277BAC760084C4C4 /* XMLMapper in Frameworks */,
+				AEC1E1B9277CC8B90084C4C4 /* SWXMLHash in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 			);
 			name = Movies;
 			packageProductDependencies = (
-				AEC1E1B3277BAC760084C4C4 /* XMLMapper */,
+				AEC1E1B8277CC8B90084C4C4 /* SWXMLHash */,
 			);
 			productName = Movies;
 			productReference = AE050A09277B833C00E696F6 /* Movies.app */;
@@ -117,7 +117,7 @@
 			);
 			mainGroup = AE050A00277B833C00E696F6;
 			packageReferences = (
-				AEC1E1B2277BAC760084C4C4 /* XCRemoteSwiftPackageReference "XMLMapper" */,
+				AEC1E1B7277CC8B90084C4C4 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
 			);
 			productRefGroup = AE050A0A277B833C00E696F6 /* Products */;
 			projectDirPath = "";
@@ -360,21 +360,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AEC1E1B2277BAC760084C4C4 /* XCRemoteSwiftPackageReference "XMLMapper" */ = {
+		AEC1E1B7277CC8B90084C4C4 /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gcharita/XMLMapper.git";
+			repositoryURL = "https://github.com/drmohundro/SWXMLHash.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 6.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AEC1E1B3277BAC760084C4C4 /* XMLMapper */ = {
+		AEC1E1B8277CC8B90084C4C4 /* SWXMLHash */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AEC1E1B2277BAC760084C4C4 /* XCRemoteSwiftPackageReference "XMLMapper" */;
-			productName = XMLMapper;
+			package = AEC1E1B7277CC8B90084C4C4 /* XCRemoteSwiftPackageReference "SWXMLHash" */;
+			productName = SWXMLHash;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -711,7 +711,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWu-JN-xls">
-                                <rect key="frame" x="255" y="615" width="54" height="29"/>
+                                <rect key="frame" x="255" y="615" width="326" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Title" id="qR3-uE-Zan">
                                     <font key="font" metaFont="systemSemibold" size="25"/>
@@ -738,7 +738,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DSN-YS-t2d">
-                                <rect key="frame" x="254" y="591" width="44" height="16"/>
+                                <rect key="frame" x="254" y="591" width="262" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Studio" id="NCP-dU-sKe">
                                     <font key="font" metaFont="system"/>
@@ -747,7 +747,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQw-Ff-Hub">
-                                <rect key="frame" x="357" y="573" width="76" height="16"/>
+                                <rect key="frame" x="357" y="573" width="102" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Relase Date" id="XpC-c8-xXF">
                                     <font key="font" metaFont="system"/>
@@ -756,7 +756,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-Sg-7hC">
-                                <rect key="frame" x="255" y="549" width="53" height="16"/>
+                                <rect key="frame" x="255" y="549" width="195" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Director" id="0Ez-6Q-tTw">
                                     <font key="font" metaFont="system"/>
@@ -774,7 +774,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Knk-oW-KuN">
-                                <rect key="frame" x="255" y="525" width="32" height="16"/>
+                                <rect key="frame" x="255" y="525" width="292" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Cast" id="LDN-FZ-NJl">
                                     <font key="font" metaFont="system"/>
@@ -813,14 +813,15 @@
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JzC-RM-tek">
                                 <rect key="frame" x="682" y="392" width="233" height="254"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="ALO-hv-71J"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="ALO-hv-71J"/>
                             </imageView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="castLabel" destination="Knk-oW-KuN" id="uUk-pn-nX6"/>
                         <outlet property="descriptionLabel" destination="tbs-sn-D5d" id="zl6-g5-0cq"/>
-                        <outlet property="directorLabel" destination="Knk-oW-KuN" id="xkI-y6-AIb"/>
+                        <outlet property="directorLabel" destination="ngc-Sg-7hC" id="tiw-Sl-qh1"/>
+                        <outlet property="imageWell" destination="JzC-RM-tek" id="sVL-Dz-DnV"/>
                         <outlet property="player" destination="Vkp-QL-3hW" id="H5Q-Q3-URh"/>
                         <outlet property="ratingLabel" destination="LS5-Ti-tIn" id="TKp-CT-umj"/>
                         <outlet property="releaseDateLabel" destination="aQw-Ff-Hub" id="sNa-kM-Ww9"/>

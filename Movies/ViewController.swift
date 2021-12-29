@@ -7,8 +7,7 @@
 
 import Cocoa
 import AVFoundation
-import XMLMapper
-import Trailer
+import SWXMLHash
 
 class ViewController: NSViewController {
 
@@ -22,6 +21,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var castLabel: NSTextField!
     @IBOutlet weak var descriptionLabel: NSTextField!
     @IBOutlet weak var trailerList: NSCollectionView!
+    @IBOutlet weak var imageWell: NSImageView!
     
     
     var item : AVPlayerItem!
@@ -29,9 +29,16 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DispatchQueue.global(qos: .background).async
+        DispatchQueue.main.async
                {
-                   self.play()
+                   do
+                   {
+                       try self.play()
+                   }
+                   catch
+                   {
+                       
+                   }
                }
         // Do any additional setup after loading the view.
     }
@@ -42,15 +49,44 @@ class ViewController: NSViewController {
         }
     }
 
-    func play()
+    func play() throws
     {
+        var trailers = Array<Trailer>();
         
-        let trailers = XMLMapper<Trailer>().map(XMLfile: "https://trailers.apple.com/trailers/home/xml/current_720p.xml")
+        if let url = URL(string: "https://trailers.apple.com/trailers/home/xml/current_720p.xml")
+        {
+           let xmlToParse = try String(contentsOf:url)
+            let xml = XMLHash.parse(xmlToParse)
+            
+            let xmltrailers = xml["records"]["movieinfo"]
+            
+            for xmltrailer in xmltrailers.all
+            {
+                let trailer = Trailer()
+                
+                let info = xmltrailer["info"]
+                
+                trailer.mapdata(map:xmltrailer)
+                trailer.mapinfo(map:info)
+                
+                trailers.append(trailer)
+            }
+        }
 
-        item = AVPlayerItem(url: NSURL.init(string: "https://trailers.apple.com/movies/paramount/clifford-the-big-red-dog/clifford-the-big-red-dog-trailer-2_h640w.mov")! as URL)
+        let index = Int(arc4random_uniform(UInt32(trailers.count)))
+        let trailer = trailers[index]
+        titleLabel.stringValue = trailer.title
+        ratingLabel.stringValue = trailer.rating
+        runtimeLabel.stringValue = trailer.runtime
+        studioLabel.stringValue = trailer.studio
+        releaseDateLabel.stringValue = trailer.releaseDate
+        directorLabel.stringValue = trailer.director
+        descriptionLabel.stringValue = trailer.description
+        imageWell.image = NSImage(contentsOf: URL(string: trailer.poster)!)
         
+        item = AVPlayerItem(url: NSURL.init(string:trailer.preview)! as URL)
         
-        _ = item?.observe(\AVPlayerItem.status, changeHandler: 
+        _ = item?.observe(\AVPlayerItem.status, changeHandler:
 		{ observedPlayerItem, change in
             if (observedPlayerItem.status == AVPlayerItem.Status.readyToPlay) 
 			{

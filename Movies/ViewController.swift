@@ -50,8 +50,10 @@ class ViewController: NSViewController {
         item = AVPlayerItem(url: NSURL.init(string: "https://trailers.apple.com/movies/paramount/clifford-the-big-red-dog/clifford-the-big-red-dog-trailer-2_h640w.mov")! as URL)
         
         
-        _ = item?.observe(\AVPlayerItem.status, changeHandler: { observedPlayerItem, change in
-            if (observedPlayerItem.status == AVPlayerItem.Status.readyToPlay) {
+        _ = item?.observe(\AVPlayerItem.status, changeHandler: 
+		{ observedPlayerItem, change in
+            if (observedPlayerItem.status == AVPlayerItem.Status.readyToPlay) 
+			{
                 print("Current stream duration \(observedPlayerItem.duration.seconds)")
             }
         })

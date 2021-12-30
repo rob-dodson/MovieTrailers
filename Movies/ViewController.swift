@@ -70,6 +70,7 @@ class ViewController: NSViewController {
                 trailers.append(trailer)
             }
         }
+        
         let index = Int(arc4random_uniform(UInt32(trailers.count)))
         let trailer = trailers[index]
         titleLabel.stringValue = trailer.title

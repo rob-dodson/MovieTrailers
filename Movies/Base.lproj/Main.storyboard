@@ -712,18 +712,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="959" height="777"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <avPlayerView fixedFrame="YES" controlsStyle="inline" showsFullScreenToggleButton="YES" showsSharingServiceButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-QL-3hW" customClass="Player" customModule="Movies" customModuleProvider="target">
-                                <rect key="frame" x="256" y="37" width="643" height="386"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <avPlayerView controlsStyle="inline" showsFullScreenToggleButton="YES" showsSharingServiceButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-QL-3hW" customClass="Player" customModule="Movies" customModuleProvider="target">
+                                <rect key="frame" x="305" y="20" width="643" height="386"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="643" id="OUI-ut-w97"/>
+                                    <constraint firstAttribute="height" constant="386" id="nQl-6I-UwK"/>
+                                </constraints>
                             </avPlayerView>
-                            <scrollView wantsLayer="YES" misplaced="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-HU-D5V" userLabel="Scroll - Collection View">
-                                <rect key="frame" x="10" y="15" width="225" height="1000"/>
+                            <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-HU-D5V" userLabel="Scroll - Collection View">
+                                <rect key="frame" x="15" y="20" width="225" height="742"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="W2U-m0-N7M">
-                                    <rect key="frame" x="0.0" y="0.0" width="225" height="1000"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="225" height="742"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="4nX-VK-hAk">
-                                            <rect key="frame" x="0.0" y="0.0" width="225" height="1000"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="225" height="742"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfRows="200" maximumNumberOfColumns="1" id="s0M-jL-zDp">
                                                 <size key="minimumItemSize" width="100" height="46"/>
@@ -741,7 +744,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="35t-Ck-xOS">
-                                    <rect key="frame" x="209" y="0.0" width="16" height="1000"/>
+                                    <rect key="frame" x="209" y="0.0" width="16" height="742"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -764,7 +767,7 @@
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yEP-p9-fWT">
-                                <rect key="frame" x="713" y="442" width="200" height="275"/>
+                                <rect key="frame" x="718" y="442" width="200" height="275"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Fd1-Pl-0Pt"/>
                                     <constraint firstAttribute="height" constant="275" id="kTL-fH-myw"/>
@@ -781,7 +784,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWu-JN-xls">
-                                <rect key="frame" x="254" y="722" width="673" height="36"/>
+                                <rect key="frame" x="254" y="726" width="673" height="36"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Title" id="qR3-uE-Zan">
                                     <font key="font" size="30" name="HelveticaNeue-CondensedBold"/>
                                     <color key="textColor" name="TextColor"/>
@@ -856,13 +859,16 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="oWu-JN-xls" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="19" id="3op-WC-TvY"/>
+                            <constraint firstItem="oWu-JN-xls" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="15" id="3op-WC-TvY"/>
                             <constraint firstItem="yEP-p9-fWT" firstAttribute="leading" secondItem="6Ru-Ub-RRg" secondAttribute="trailing" constant="30" id="EiW-df-jmw"/>
-                            <constraint firstAttribute="bottom" secondItem="iRp-HU-D5V" secondAttribute="bottom" constant="15" id="J2e-W8-LDd"/>
+                            <constraint firstAttribute="bottom" secondItem="iRp-HU-D5V" secondAttribute="bottom" constant="20" id="J2e-W8-LDd"/>
                             <constraint firstItem="6Ru-Ub-RRg" firstAttribute="leading" secondItem="4nX-VK-hAk" secondAttribute="trailing" constant="25" id="KRT-vX-8JV"/>
-                            <constraint firstItem="iRp-HU-D5V" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="MkG-Rl-osU"/>
+                            <constraint firstItem="iRp-HU-D5V" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="15" id="MkG-Rl-osU"/>
+                            <constraint firstAttribute="trailing" secondItem="Vkp-QL-3hW" secondAttribute="trailing" constant="20" id="eaQ-bI-gPI"/>
                             <constraint firstItem="yEP-p9-fWT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="60" id="k9y-uA-2ur"/>
                             <constraint firstAttribute="trailing" secondItem="yEP-p9-fWT" secondAttribute="trailing" constant="50" id="lrF-AJ-CcU"/>
+                            <constraint firstItem="Vkp-QL-3hW" firstAttribute="top" secondItem="yEP-p9-fWT" secondAttribute="bottom" constant="36" id="o5Q-iT-low"/>
+                            <constraint firstAttribute="bottom" secondItem="Vkp-QL-3hW" secondAttribute="bottom" constant="20" id="p9z-aV-F6E"/>
                             <constraint firstItem="iRp-HU-D5V" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="15" id="uLI-ka-9qQ"/>
                             <constraint firstItem="6Ru-Ub-RRg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="200" id="zzJ-CD-VXM"/>
                         </constraints>

@@ -19,8 +19,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var trailerList: NSCollectionView!
     @IBOutlet weak var imageView: NSImageView!
     @IBOutlet weak var infoLabel: NSTextField!
-
-    @IBOutlet weak var descriptionText: NSTextField!
+    @IBOutlet var descriptionText: NSTextView!
     
     var item : AVPlayerItem!
     
@@ -76,7 +75,7 @@ class ViewController: NSViewController {
         titleLabel.stringValue = trailer.title
         studioLabel.stringValue = trailer.studio
         directorLabel.stringValue = trailer.director
-        descriptionText.stringValue = trailer.description
+        descriptionText.string = trailer.description
         castLabel.stringValue = trailer.cast
         imageView.image = NSImage(contentsOf: URL(string: trailer.largePoster)!)
         

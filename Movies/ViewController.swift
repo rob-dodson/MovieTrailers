@@ -71,7 +71,8 @@ class ViewController: NSViewController {
         }
         
         let index = Int(arc4random_uniform(UInt32(trailers.count)))
-        let trailer = trailers[index]
+        NSLog("index %d", index)
+        let trailer = trailers[25]
         titleLabel.stringValue = trailer.title
         studioLabel.stringValue = trailer.studio
         directorLabel.stringValue = trailer.director

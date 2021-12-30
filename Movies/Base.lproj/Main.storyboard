@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.AVKitIBPlugin" version="19529"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -754,12 +755,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="info" id="C8D-0I-csA">
                                     <font key="font" size="13" name="HelveticaNeue"/>
-                                    <color key="textColor" name="systemMintColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="TextColor"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yEP-p9-fWT">
-                                <rect key="frame" x="712" y="466" width="200" height="275"/>
+                                <rect key="frame" x="712" y="442" width="200" height="275"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Fd1-Pl-0Pt"/>
                                     <constraint firstAttribute="height" constant="275" id="kTL-fH-myw"/>
@@ -776,10 +777,10 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWu-JN-xls">
-                                <rect key="frame" x="254" y="722" width="624" height="36"/>
-                                <textFieldCell key="cell" title="Title" id="qR3-uE-Zan">
+                                <rect key="frame" x="254" y="722" width="673" height="36"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Title" id="qR3-uE-Zan">
                                     <font key="font" size="30" name="HelveticaNeue-CondensedBold"/>
-                                    <color key="textColor" name="systemMintColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="TextColor"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -788,7 +789,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Studio" id="NCP-dU-sKe">
                                     <font key="font" size="13" name="HelveticaNeue-LightItalic"/>
-                                    <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="TextColor"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -797,23 +798,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" title="Cast" id="LDN-FZ-NJl">
                                     <font key="font" size="13" name="HelveticaNeue"/>
-                                    <color key="textColor" name="systemMintColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="TextColor"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <scrollView misplaced="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ru-Ub-RRg">
                                 <rect key="frame" x="256" y="453" width="423" height="123"/>
-                                <clipView key="contentView" drawsBackground="NO" id="TcG-3p-UQE">
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="TcG-3p-UQE">
                                     <rect key="frame" x="0.0" y="0.0" width="423" height="123"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView editable="NO" selectable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="BfI-kD-dmH">
+                                        <textView editable="NO" selectable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" id="BfI-kD-dmH">
                                             <rect key="frame" x="0.0" y="0.0" width="423" height="123"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="textColor" name="systemMintColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" name="TextColor"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <size key="minSize" width="423" height="123"/>
                                             <size key="maxSize" width="448" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="description">
+                                                    <attributes>
+                                                        <color key="NSColor" name="TextColor"/>
+                                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
@@ -823,7 +833,7 @@
                                     <constraint firstAttribute="height" constant="125" id="dh0-z3-qJr"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="kEg-uy-2dy">
-                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <rect key="frame" x="-100" y="-100" width="423" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="cZz-Ud-9wP">
@@ -836,7 +846,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Director Name" id="0Ez-6Q-tTw">
                                     <font key="font" size="13" name="HelveticaNeue"/>
-                                    <color key="textColor" name="systemMintColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="TextColor"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -847,7 +857,7 @@
                             <constraint firstAttribute="bottom" secondItem="iRp-HU-D5V" secondAttribute="bottom" constant="15" id="J2e-W8-LDd"/>
                             <constraint firstItem="6Ru-Ub-RRg" firstAttribute="leading" secondItem="4nX-VK-hAk" secondAttribute="trailing" constant="25" id="KRT-vX-8JV"/>
                             <constraint firstItem="iRp-HU-D5V" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="MkG-Rl-osU"/>
-                            <constraint firstItem="yEP-p9-fWT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="k9y-uA-2ur"/>
+                            <constraint firstItem="yEP-p9-fWT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="60" id="k9y-uA-2ur"/>
                             <constraint firstAttribute="trailing" secondItem="yEP-p9-fWT" secondAttribute="trailing" constant="50" id="lrF-AJ-CcU"/>
                             <constraint firstItem="iRp-HU-D5V" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="15" id="uLI-ka-9qQ"/>
                             <constraint firstItem="6Ru-Ub-RRg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="200" id="zzJ-CD-VXM"/>
@@ -870,4 +880,9 @@
             <point key="canvasLocation" x="-679.5" y="1015.5"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

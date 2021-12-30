@@ -21,32 +21,35 @@ class ViewController: NSViewController {
     @IBOutlet weak var infoLabel: NSTextField!
     @IBOutlet var descriptionText: NSTextView!
     
-    var item : AVPlayerItem!
+    @IBOutlet weak var collectionView: NSCollectionView!
     
-    override func viewDidLoad() {
+    var item : AVPlayerItem!
+    var model : Model!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        DispatchQueue.main.async
-               {
-                   do
-                   {
-                       try self.play()
-                   }
-                   catch
-                   {
-                       
-                   }
-               }
-        // Do any additional setup after loading the view.
+        model = Model()
+        do
+        {
+            try load()
+        }
+        catch
+        {
+            NSLog("Error loading trailer list")
+        }
     }
 
-    override var representedObject: Any? {
-        didSet {
+    override var representedObject: Any?
+    {
+        didSet
+        {
         // Update the view, if already loaded.
         }
     }
 
-    func play() throws
+    func load() throws
     {
         var trailers = Array<Trailer>();
         
@@ -70,9 +73,15 @@ class ViewController: NSViewController {
             }
         }
         
-        let index = Int(arc4random_uniform(UInt32(trailers.count)))
-        NSLog("index %d", index)
-        let trailer = trailers[25]
+        model.setup(list: trailers,controller:self)
+        collectionView.dataSource = model
+        collectionView.delegate = model
+        collectionView.register(trailerViewItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "dataSourceItem"))
+    }
+    
+    
+    func play(trailer:Trailer)
+    {
         titleLabel.stringValue = trailer.title
         studioLabel.stringValue = trailer.studio
         directorLabel.stringValue = trailer.director
@@ -83,19 +92,9 @@ class ViewController: NSViewController {
         
         infoLabel.stringValue = String(format: "%@ ・ %@ ・ %@ ・ %@", trailer.genre,trailer.releaseDate,trailer.runtime,trailer.rating)
         
+        
         item = AVPlayerItem(url: NSURL.init(string:trailer.preview)! as URL)
-        /*
-        _ = item?.observe(\AVPlayerItem.status, changeHandler:
-		{ observedPlayerItem, change in
-            if (observedPlayerItem.status == AVPlayerItem.Status.readyToPlay) 
-			{
-                print("Current stream duration \(observedPlayerItem.duration.seconds)")
-            }
-        })
-         */
-        
         player.player = AVPlayer(playerItem: item)
-        
         player.player?.play()
     }
 }

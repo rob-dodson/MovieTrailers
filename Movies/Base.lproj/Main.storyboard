@@ -715,16 +715,19 @@
                                 <rect key="frame" x="256" y="37" width="643" height="386"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </avPlayerView>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-HU-D5V">
-                                <rect key="frame" x="10" y="15" width="225" height="747"/>
-                                <clipView key="contentView" id="W2U-m0-N7M">
-                                    <rect key="frame" x="1" y="1" width="223" height="745"/>
+                            <scrollView wantsLayer="YES" misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-HU-D5V" userLabel="Scroll - Collection View">
+                                <rect key="frame" x="10" y="15" width="225" height="1000"/>
+                                <clipView key="contentView" copiesOnScroll="NO" id="W2U-m0-N7M">
+                                    <rect key="frame" x="1" y="1" width="223" height="998"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView id="4nX-VK-hAk">
-                                            <rect key="frame" x="0.0" y="0.0" width="223" height="745"/>
+                                        <collectionView selectable="YES" allowsEmptySelection="NO" id="4nX-VK-hAk">
+                                            <rect key="frame" x="0.0" y="0.0" width="223" height="998"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfColumns="1" id="s0M-jL-zDp"/>
+                                            <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfRows="200" maximumNumberOfColumns="1" id="s0M-jL-zDp">
+                                                <size key="minimumItemSize" width="100" height="46"/>
+                                                <size key="maximumItemSize" width="1000" height="46"/>
+                                            </collectionViewGridLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </collectionView>
                                     </subviews>
@@ -736,8 +739,8 @@
                                     <rect key="frame" x="-100" y="-100" width="213" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="35t-Ck-xOS">
-                                    <rect key="frame" x="198" y="1" width="16" height="718"/>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="35t-Ck-xOS">
+                                    <rect key="frame" x="208" y="1" width="16" height="998"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -865,6 +868,7 @@
                     </view>
                     <connections>
                         <outlet property="castLabel" destination="Knk-oW-KuN" id="uUk-pn-nX6"/>
+                        <outlet property="collectionView" destination="4nX-VK-hAk" id="7Ip-bk-ArA"/>
                         <outlet property="descriptionText" destination="BfI-kD-dmH" id="cfo-OD-pc3"/>
                         <outlet property="directorLabel" destination="ngc-Sg-7hC" id="tiw-Sl-qh1"/>
                         <outlet property="imageView" destination="yEP-p9-fWT" id="oAp-83-PLN"/>
@@ -872,7 +876,6 @@
                         <outlet property="player" destination="Vkp-QL-3hW" id="H5Q-Q3-URh"/>
                         <outlet property="studioLabel" destination="DSN-YS-t2d" id="aEH-YG-pvE"/>
                         <outlet property="titleLabel" destination="oWu-JN-xls" id="ahh-wq-gjb"/>
-                        <outlet property="trailerList" destination="4nX-VK-hAk" id="amn-38-dD6"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

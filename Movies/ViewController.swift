@@ -41,6 +41,7 @@ class ViewController: NSViewController {
         }
     }
 
+
     override var representedObject: Any?
     {
         didSet
@@ -49,13 +50,28 @@ class ViewController: NSViewController {
         }
     }
 
+
     func load() throws
     {
         var trailers = Array<Trailer>();
         
+		//
+		// json
+		// 
+        if let url = URL(string: "https://trailers.apple.com/trailers/home/feeds/just_added.json")
+		{
+			let json = String(from:url)
+			let jsonData = json.data(using: .utf8)!
+			let jsontrailers = try! JSONDecoder().decode(Trailer.self, from: jsonData)
+		}
+
+
+		//
+		// xml current
+		//
         if let url = URL(string: "https://trailers.apple.com/trailers/home/xml/current_720p.xml")
         {
-           let xmlToParse = try String(contentsOf:url)
+			let xmlToParse = try String(contentsOf:url)
             let xml = XMLHash.parse(xmlToParse)
             
             let xmltrailers = xml["records"]["movieinfo"]

@@ -10,7 +10,7 @@ import Foundation
 import SWXMLHash
 
 
-class Trailer
+class Trailer : Decodable
 {
     var title       : String!
     var runtime     : String!

@@ -29,6 +29,7 @@ class Model: NSObject, NSCollectionViewDataSource,NSCollectionViewDelegate
         return trailers.count
     }
     
+
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem
     {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "dataSourceItem"), for: indexPath) as! trailerViewItem
@@ -39,6 +40,7 @@ class Model: NSObject, NSCollectionViewDataSource,NSCollectionViewDelegate
         
         return item
     }
+
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>)
     {

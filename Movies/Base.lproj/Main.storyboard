@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.AVKitIBPlugin" version="19529"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -715,20 +716,20 @@
                                 <rect key="frame" x="256" y="37" width="643" height="386"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </avPlayerView>
-                            <scrollView wantsLayer="YES" misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-HU-D5V" userLabel="Scroll - Collection View">
+                            <scrollView wantsLayer="YES" misplaced="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-HU-D5V" userLabel="Scroll - Collection View">
                                 <rect key="frame" x="10" y="15" width="225" height="1000"/>
-                                <clipView key="contentView" copiesOnScroll="NO" id="W2U-m0-N7M">
-                                    <rect key="frame" x="1" y="1" width="223" height="998"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="W2U-m0-N7M">
+                                    <rect key="frame" x="0.0" y="0.0" width="225" height="1000"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="4nX-VK-hAk">
-                                            <rect key="frame" x="0.0" y="0.0" width="223" height="998"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="225" height="1000"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfRows="200" maximumNumberOfColumns="1" id="s0M-jL-zDp">
                                                 <size key="minimumItemSize" width="100" height="46"/>
-                                                <size key="maximumItemSize" width="1000" height="46"/>
+                                                <size key="maximumItemSize" width="200" height="46"/>
                                             </collectionViewGridLayout>
-                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="primaryBackgroundColor" name="unemphasizedSelectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </collectionView>
                                     </subviews>
                                 </clipView>
@@ -739,8 +740,8 @@
                                     <rect key="frame" x="-100" y="-100" width="213" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="35t-Ck-xOS">
-                                    <rect key="frame" x="208" y="1" width="16" height="998"/>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="35t-Ck-xOS">
+                                    <rect key="frame" x="209" y="0.0" width="16" height="1000"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -763,7 +764,7 @@
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yEP-p9-fWT">
-                                <rect key="frame" x="712" y="442" width="200" height="275"/>
+                                <rect key="frame" x="713" y="442" width="200" height="275"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Fd1-Pl-0Pt"/>
                                     <constraint firstAttribute="height" constant="275" id="kTL-fH-myw"/>
@@ -885,7 +886,7 @@
     </scenes>
     <resources>
         <namedColor name="TextColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

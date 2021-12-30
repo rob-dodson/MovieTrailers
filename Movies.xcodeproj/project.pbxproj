@@ -66,14 +66,14 @@
 			children = (
 				AE050A0C277B833C00E696F6 /* AppDelegate.swift */,
 				AE050A0E277B833C00E696F6 /* ViewController.swift */,
+				AE9DF24C277E20D50065A648 /* Model.swift */,
+				AE050A12277B833D00E696F6 /* Main.storyboard */,
+				AEC1E1B5277BACC90084C4C4 /* Trailer.swift */,
 				AE9DF252277E2D560065A648 /* trailerViewItem.swift */,
 				AE9DF253277E2D560065A648 /* trailerViewItem.xib */,
 				AE050A10277B833D00E696F6 /* Assets.xcassets */,
-				AE050A12277B833D00E696F6 /* Main.storyboard */,
 				AE050A1B277B859800E696F6 /* Player.swift */,
 				AE050A15277B833D00E696F6 /* Movies.entitlements */,
-				AEC1E1B5277BACC90084C4C4 /* Trailer.swift */,
-				AE9DF24C277E20D50065A648 /* Model.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";

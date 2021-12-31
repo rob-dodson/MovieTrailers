@@ -1,2 +1,11 @@
 static let currentTrailersHDURL = URL(string: "https://trailers.apple.com/trailers/home/xml/current_720p.xml")!
 static let currentTrailersSDURL = URL(string: "https://trailers.apple.com/trailers/home/xml/current.xml")!
+
+ var sections = [
+                new Trailers.PosterSection('justadded', '/trailers/home/feeds/just_added.json'),
+                new Trailers.PosterSection('exclusive', '/trailers/home/feeds/exclusive.json'),
+                new Trailers.PosterSection('justhd', '/trailers/home/feeds/just_hd.json'),
+                new Trailers.PosterSection('mostpopular', '/trailers/home/feeds/most_pop.json'),
+                new Trailers.GenreSection('genres', '/trailers/home/feeds/genres.json'),
+                new Trailers.StudioSection('moviestudios', '/trailers/home/feeds/studios.json'),
+                new Trailers.SearchSection('quickfind', '/trailers/home/scripts/quickfind.php?callback=searchCallback&q=')];

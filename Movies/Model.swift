@@ -36,8 +36,15 @@ class Model: NSObject, NSCollectionViewDataSource,NSCollectionViewDelegate
         
         let trailer = trailers[indexPath.item]
         item.text.stringValue = trailer.title
-        item.image.image = NSImage(contentsOf: URL(string: trailer.poster)!)
         
+        DispatchQueue.global(qos: .userInitiated).async
+        {
+            let image = NSImage(contentsOf: URL(string: trailer.poster)!)
+            DispatchQueue.main.async
+            {
+                item.image.image = image
+            }
+        }
         return item
     }
 

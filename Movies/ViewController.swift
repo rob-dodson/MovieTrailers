@@ -108,9 +108,22 @@ class ViewController: NSViewController {
         descriptionText.string = trailer.description ?? "no description"
         
         var cast = String()
-        for member in trailer.actors
+        if trailer.actors != nil && trailer.actors.count > 0
         {
-            cast = cast + ", " + member
+            var loop = 0
+            for member in trailer.actors
+            {
+                if loop > 0 && loop < trailer.actors.count
+                {
+                    cast = cast + ", "
+                }
+                cast = cast + member
+                loop = loop + 1
+            }
+        }
+        else
+        {
+            cast = "none"
         }
         castLabel.stringValue = cast
         
@@ -157,15 +170,31 @@ class ViewController: NSViewController {
          https://trailers.apple.com/trailers/focus_features/the-northman/
          
         <meta name="Description" content="From visionary director Robert Eggers comes THE NORTHMAN, an action-filled epic that follows a young Viking prince on his quest to avenge his father’s murder.  With an all-star cast that includes Alexander Skarsgård, Nicole Kidman, Claes Bang, Anya Taylor-Joy, Ethan Hawke, Björk, and Willem Dafoe.">
+         
+         <span class="movie-rating rating-pg13"> pg13 </span>
          */
         if let url = URL(string:"https://trailers.apple.com" + trailer.location)
         {
             let html = try String(contentsOf: url, encoding: String.defaultCStringEncoding)
+            
+            print(url.description)
+            print(html)
+            
             let matches = html.match(regex: "<meta name=\"Description\".*>")
-            var desc = matches[0].description
-            desc = desc.replacingOccurrences(of: "[\"<meta name=\\\"Description\\\" content=\\\"", with: "")
-            desc = desc.replacingOccurrences(of: "\\\" />\"]", with: "")
-            descriptionText.string = desc
+            if matches.count > 0
+            {
+                var desc = matches[0].description
+                desc = desc.replacingOccurrences(of: "[\"<meta name=\\\"Description\\\" content=\\\"", with: "")
+                desc = desc.replacingOccurrences(of: "\\\" />\"]", with: "")
+                desc = desc.replacingOccurrences(of: "‚Äú", with: "\"")
+                desc = desc.replacingOccurrences(of: "‚Äù", with: "\"")
+                desc = desc.replacingOccurrences(of: "‚Äô", with: "'")
+                desc = desc.replacingOccurrences(of: "\\\'", with: "'")
+                desc = desc.replacingOccurrences(of: "\\\"", with: "\"")
+                desc = desc.replacingOccurrences(of: " ‚Äì", with:",")
+                
+                descriptionText.string = desc
+            }
         }
     }
 }

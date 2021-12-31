@@ -9,6 +9,14 @@ import Foundation
 
 import SWXMLHash
 
+struct preview : Decodable
+{
+    var postdate : String!
+    var url      : String!
+    var type     : String!
+    var exclusive : Bool
+    var hd        : Bool
+}
 
 class Trailer : Decodable
 {
@@ -16,39 +24,42 @@ class Trailer : Decodable
     var runtime     : String!
     var rating      : String!
     var studio      : String!
-    var postDate    : String!
-    var releaseDate : String!
+    var postdate    : String!
+    var releasedate : String!
     var copyright   : String!
-    var director    : String!
+    var directors   : String!
+    var location    : String!
     var description : String!
-    var cast        : String!
-    var genre       : String!
+    var actors      : [String]!
+    var genre       : [String]!
     var poster      : String!
-    var largePoster : String!
+    var poster_2x   : String!
     var preview     : String!
+    var moviesite   : String!
+    var trailers    : [preview]!
+    
     
     
     func mapdata(map: XMLIndexer)
     {
-        genre       = map["genre"]["name"][0].element!.text
         poster      = map["poster"]["location"].element!.text
-        largePoster = map["poster"]["xlarge"].element!.text
+        poster_2x = map["poster"]["xlarge"].element!.text
         preview     = map["preview"]["large"].element!.text
         
-        cast = String()
+        actors = Array<String>()
         var loop = 0
         for member in map["cast"]["name"].all
         {
-            if cast.count > 0 && loop < cast.count
-            {
-                cast = cast + ", "
-            }
-            cast = cast + member.element!.text
+            actors.append(member.element!.text)
             loop = loop + 1
-            if loop > 5
-            {
-                break;
-            }
+        }
+        
+        genre = Array<String>()
+        loop = 0
+        for genrename in map["genre"]["name"].all
+        {
+            genre.append(genrename.element!.text)
+            loop = loop + 1
         }
     }
     
@@ -58,9 +69,9 @@ class Trailer : Decodable
        title       = map["title"].element!.text
        rating      = map["rating"].element!.text
        studio      = map["studio"].element!.text
-       postDate    = map["postdate"].element!.text
+       postdate    = map["postdate"].element!.text
        copyright   = map["copyright"].element!.text
-       director    = map["director"].element!.text
+       directors   = map["director"].element!.text
        description = map["description"].element!.text
         
         let time = map["runtime"].element!.text
@@ -69,6 +80,6 @@ class Trailer : Decodable
         
         let date = map["releasedate"].element!.text
         let parts1 = date.split(separator:"-")
-        releaseDate = String(parts1[0])
+        releasedate = String(parts1[0])
    }
 }

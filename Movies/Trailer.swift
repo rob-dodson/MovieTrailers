@@ -3,6 +3,8 @@
 //  Movies
 //
 //  Created by Robert Dodson on 12/28/21.
+// 
+// can be inited from json Decodable or from xml via mapdata() and mapinfo()
 //
 
 import Foundation
@@ -17,6 +19,7 @@ struct preview : Decodable
     var exclusive : Bool
     var hd        : Bool
 }
+
 
 class Trailer : Decodable
 {
@@ -37,7 +40,6 @@ class Trailer : Decodable
     var preview     : String!
     var moviesite   : String!
     var trailers    : [preview]!
-    
     
     
     func mapdata(map: XMLIndexer)

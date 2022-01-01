@@ -25,6 +25,7 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
         self.controller = controller
         
         cache = NSCache()
+
         tempImage = NSImage(named:"temp")
         fontsmall = NSFont(name: "Helvetica Neue Condensed Bold", size: 13.0)
         fontmed = NSFont(name: "Helvetica Neue Condensed Bold", size: 14.0)
@@ -42,10 +43,14 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem
     {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "dataSourceItem"), for: indexPath) as! trailerViewItem
-        
         let trailer = trailers[indexPath.item]
-        item.text.stringValue = trailer.title
         
+		//
+		// adjust font size for title if too long. 
+		// Just based on word count, not too smart.
+		//
+        item.text.stringValue = trailer.title
+
         let splitcount = trailer.title.split(separator: " ").count
         if splitcount >=  4 && splitcount < 6
         {
@@ -60,6 +65,10 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
             item.text.font = fontlarge
         }
         
+
+		//
+		// poster image from cache or load the url
+		//
         let image = cache.object(forKey: trailer.title as NSString)
         if image != nil
         {
@@ -69,6 +78,9 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
         {
             item.image.image = nil
             
+			//
+			// background load of poster image
+			//
             DispatchQueue.global(qos: .userInitiated).async
             {
                 let image = NSImage(contentsOf: URL(string: trailer.poster)!)
@@ -81,6 +93,7 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
                 }
             }
         }
+
         return item
     }
 

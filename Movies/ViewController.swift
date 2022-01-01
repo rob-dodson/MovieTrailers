@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Movies
+//  MovieTrailers
 //
 //  Created by Robert Dodson on 12/28/21.
 //
@@ -20,11 +20,11 @@ class ViewController: NSViewController {
     @IBOutlet weak var imageView: NSImageView!
     @IBOutlet weak var infoLabel: NSTextField!
     @IBOutlet var descriptionText: NSTextView!
-    
     @IBOutlet weak var collectionView: NSCollectionView!
     
     var item : AVPlayerItem!
     var model : Model!
+
     
     override func viewDidLoad()
     {
@@ -56,7 +56,7 @@ class ViewController: NSViewController {
         var trailers = Array<Trailer>();
         
 		//
-		// json
+		// json for just_added list
 		// 
         if let url = URL(string: "https://trailers.apple.com/trailers/home/feeds/just_added.json")
 		{
@@ -70,7 +70,7 @@ class ViewController: NSViewController {
 
 
 		//
-		// xml current
+		// xml current list
 		//
         if let url = URL(string: "https://trailers.apple.com/trailers/home/xml/current_720p.xml")
         {
@@ -99,13 +99,22 @@ class ViewController: NSViewController {
     }
     
     
+	//
+	// Update UI and play the trailer
+	//
     func play(trailer:Trailer)
     {
+		//
+		// main data
+		//
         titleLabel.stringValue = trailer.title
         studioLabel.stringValue = trailer.studio
         directorLabel.stringValue = trailer.directors
         descriptionText.string = trailer.description ?? "no description"
         
+		//
+		// cast
+		//
         var cast = String()
         if trailer.actors != nil && trailer.actors.count > 0
         {
@@ -126,8 +135,15 @@ class ViewController: NSViewController {
         }
         castLabel.stringValue = cast
         
+
+		//
+		// large poster
         imageView.image = NSImage(contentsOf: URL(string: trailer.poster_2x)!)
         
+
+		//
+		// misc info
+		//
         var releasedate = String()
         if trailer.trailers != nil && trailer.trailers.count > 0
         {
@@ -150,6 +166,10 @@ class ViewController: NSViewController {
                                        trailer.genre[0],releasedate,trailer.runtime ?? "",trailer.rating ?? "")
         }
         
+    
+		//
+		// try to create the correct URL to the preview video file
+		//
         var preview = String()
         if trailer.preview != nil
         {
@@ -168,6 +188,10 @@ class ViewController: NSViewController {
         player.player = AVPlayer(playerItem: item)
         player.player?.play()
         
+
+		//
+		// description - we have it from the xml or will scrape from Apple's trailer page
+		//
         if trailer.description == nil
         {
             do
@@ -180,17 +204,21 @@ class ViewController: NSViewController {
             }
         }
     }
+
     
     func getDescription(trailer:Trailer) throws
     {
+		
         /*
-         
+		 Sample description
+
          https://trailers.apple.com/trailers/focus_features/the-northman/
          
         <meta name="Description" content="From visionary director Robert Eggers comes THE NORTHMAN, an action-filled epic that follows a young Viking prince on his quest to avenge his father’s murder.  With an all-star cast that includes Alexander Skarsgård, Nicole Kidman, Claes Bang, Anya Taylor-Joy, Ethan Hawke, Björk, and Willem Dafoe.">
-         
-         <span class="movie-rating rating-pg13"> pg13 </span>
+
          */
+
+
         if let url = URL(string:"https://trailers.apple.com" + trailer.location)
         {
             let html = try String(contentsOf: url, encoding: String.defaultCStringEncoding)
@@ -201,8 +229,16 @@ class ViewController: NSViewController {
             if matches.count > 0
             {
                 var desc = matches[0].description
+
+				//
+				// strip out cruft from desc
+				//
                 desc = desc.replacingOccurrences(of: "[\"<meta name=\\\"Description\\\" content=\\\"", with: "")
                 desc = desc.replacingOccurrences(of: "\\\" />\"]", with: "")
+
+				//
+				// replace special symbol codes with the symbol
+				//
                 desc = desc.replacingOccurrences(of: "‚Äú", with: "\"")
                 desc = desc.replacingOccurrences(of: "‚Äù", with: "\"")
                 desc = desc.replacingOccurrences(of: "‚Äô", with: "'")

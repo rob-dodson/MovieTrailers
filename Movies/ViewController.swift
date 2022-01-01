@@ -162,7 +162,6 @@ class ViewController: NSViewController {
             s = s?.replacingOccurrences(of: "/trailers", with: "")
             preview = "https://movietrailers.apple.com/movies" + s! + trailer.title.lowercased() + "-trailer-1_i320.m4v"
             preview = preview.replacingOccurrences(of: " ", with: "-")
-            preview = preview.replacingOccurrences(of: ":", with: "")
         }
         print("Vid URL " + preview)
         

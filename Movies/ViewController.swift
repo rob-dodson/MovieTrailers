@@ -66,7 +66,6 @@ class ViewController: NSViewController {
             let jsontrailers : [Trailer] = try! JSONDecoder().decode([Trailer].self, from: jsonData)
             
             trailers.append(contentsOf: jsontrailers)
-            NSLog("foo")
 		}
 
 
@@ -196,8 +195,7 @@ class ViewController: NSViewController {
         {
             let html = try String(contentsOf: url, encoding: String.defaultCStringEncoding)
             
-            print(url.description)
-            print(html)
+            print("html url: " + url.description)
             
             let matches = html.match(regex: "<meta name=\"Description\".*>")
             if matches.count > 0

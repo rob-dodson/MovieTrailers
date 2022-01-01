@@ -8,7 +8,7 @@
 import Foundation
 import AppKit
 
-class Model: NSObject, NSCollectionViewDataSource,NSCollectionViewDelegate
+class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
 {
     var trailers : Array<Trailer>!
     var tempImage : NSImage!
@@ -36,6 +36,20 @@ class Model: NSObject, NSCollectionViewDataSource,NSCollectionViewDelegate
         
         let trailer = trailers[indexPath.item]
         item.text.stringValue = trailer.title
+        
+        let splitcount = trailer.title.split(separator: " ").count
+        if splitcount >=  4 && splitcount < 6
+        {
+            item.text.font = NSFont(name: "Helvetica Neue Condensed Bold", size: 14.0)
+        }
+        else if splitcount >= 6
+        {
+            item.text.font = NSFont(name: "Helvetica Neue Condensed Bold", size: 13.0)
+        }
+        else
+        {
+            item.text.font = NSFont(name: "Helvetica Neue Condensed Bold", size: 15.0)
+        }
         
         DispatchQueue.global(qos: .userInitiated).async
         {

@@ -713,7 +713,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="959" height="777"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <avPlayerView controlsStyle="inline" showsFullScreenToggleButton="YES" showsSharingServiceButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-QL-3hW" customClass="Player" customModule="MovieTrailers" customModuleProvider="target">
+                            <avPlayerView controlsStyle="inline" showsFrameSteppingButtons="YES" showsFullScreenToggleButton="YES" showsSharingServiceButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-QL-3hW" customClass="Player" customModule="MovieTrailers" customModuleProvider="target">
                                 <rect key="frame" x="305" y="20" width="643" height="386"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="643" id="OUI-ut-w97"/>

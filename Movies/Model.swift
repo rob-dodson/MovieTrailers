@@ -16,12 +16,15 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
     var fontsmall  : NSFont!
     var fontmed  : NSFont!
     var fontlarge  : NSFont!
+    var cache : NSCache<NSString,NSImage>!
+
     
     func setup(list:Array<Trailer>,controller:ViewController)
     {
         self.trailers = list
         self.controller = controller
         
+        cache = NSCache()
         tempImage = NSImage(named:"temp")
         fontsmall = NSFont(name: "Helvetica Neue Condensed Bold", size: 13.0)
         fontmed = NSFont(name: "Helvetica Neue Condensed Bold", size: 14.0)
@@ -57,12 +60,25 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
             item.text.font = fontlarge
         }
         
-        DispatchQueue.global(qos: .userInitiated).async
+        let image = cache.object(forKey: trailer.title as NSString)
+        if image != nil
         {
-            let image = NSImage(contentsOf: URL(string: trailer.poster)!)
-            DispatchQueue.main.async
+            item.image.image = image
+        }
+        else
+        {
+            item.image.image = nil
+            
+            DispatchQueue.global(qos: .userInitiated).async
             {
-                item.image.image = image
+                let image = NSImage(contentsOf: URL(string: trailer.poster)!)
+                let key = trailer.title as NSString
+                self.cache.setObject(image!, forKey: key)
+
+                DispatchQueue.main.async
+                {
+                    item.image.image = image
+                }
             }
         }
         return item

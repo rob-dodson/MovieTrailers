@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AE050A09277B833C00E696F6 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE050A09277B833C00E696F6 /* MovieTrailers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTrailers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE050A0C277B833C00E696F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE050A0E277B833C00E696F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE050A10277B833D00E696F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		AE050A0A277B833C00E696F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE050A09277B833C00E696F6 /* Movies.app */,
+				AE050A09277B833C00E696F6 /* MovieTrailers.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,9 +81,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AE050A08277B833C00E696F6 /* Movies */ = {
+		AE050A08277B833C00E696F6 /* MovieTrailers */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE050A18277B833D00E696F6 /* Build configuration list for PBXNativeTarget "Movies" */;
+			buildConfigurationList = AE050A18277B833D00E696F6 /* Build configuration list for PBXNativeTarget "MovieTrailers" */;
 			buildPhases = (
 				AE050A05277B833C00E696F6 /* Sources */,
 				AE050A06277B833C00E696F6 /* Frameworks */,
@@ -93,12 +93,12 @@
 			);
 			dependencies = (
 			);
-			name = Movies;
+			name = MovieTrailers;
 			packageProductDependencies = (
 				AEC1E1B8277CC8B90084C4C4 /* SWXMLHash */,
 			);
 			productName = Movies;
-			productReference = AE050A09277B833C00E696F6 /* Movies.app */;
+			productReference = AE050A09277B833C00E696F6 /* MovieTrailers.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AE050A08277B833C00E696F6 /* Movies */,
+				AE050A08277B833C00E696F6 /* MovieTrailers */,
 			);
 		};
 /* End PBXProject section */
@@ -366,7 +366,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE050A18277B833D00E696F6 /* Build configuration list for PBXNativeTarget "Movies" */ = {
+		AE050A18277B833D00E696F6 /* Build configuration list for PBXNativeTarget "MovieTrailers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE050A19277B833D00E696F6 /* Debug */,

@@ -13,7 +13,9 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
     var trailers : Array<Trailer>!
     var tempImage : NSImage!
     var controller : ViewController!
-    
+    var fontsmall  : NSFont!
+    var fontmed  : NSFont!
+    var fontlarge  : NSFont!
     
     func setup(list:Array<Trailer>,controller:ViewController)
     {
@@ -21,6 +23,10 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
         self.controller = controller
         
         tempImage = NSImage(named:"temp")
+        fontsmall = NSFont(name: "Helvetica Neue Condensed Bold", size: 13.0)
+        fontmed = NSFont(name: "Helvetica Neue Condensed Bold", size: 14.0)
+        fontlarge = NSFont(name: "Helvetica Neue Condensed Bold", size: 15.0)
+    
     }
     
     
@@ -40,15 +46,15 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
         let splitcount = trailer.title.split(separator: " ").count
         if splitcount >=  4 && splitcount < 6
         {
-            item.text.font = NSFont(name: "Helvetica Neue Condensed Bold", size: 14.0)
+            item.text.font = fontsmall
         }
         else if splitcount >= 6
         {
-            item.text.font = NSFont(name: "Helvetica Neue Condensed Bold", size: 13.0)
+            item.text.font = fontmed
         }
         else
         {
-            item.text.font = NSFont(name: "Helvetica Neue Condensed Bold", size: 15.0)
+            item.text.font = fontlarge
         }
         
         DispatchQueue.global(qos: .userInitiated).async

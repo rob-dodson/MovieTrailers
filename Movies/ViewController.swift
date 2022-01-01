@@ -209,7 +209,9 @@ class ViewController: NSViewController {
                 desc = desc.replacingOccurrences(of: "\\\'", with: "'")
                 desc = desc.replacingOccurrences(of: "\\\"", with: "\"")
                 desc = desc.replacingOccurrences(of: " ‚Äì", with:",")
-                
+                desc = desc.replacingOccurrences(of: "¬Æ", with:"®")
+                desc = desc.replacingOccurrences(of: "√Ø", with:"ï")
+
                 descriptionText.string = desc
             }
         }

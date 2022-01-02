@@ -20,7 +20,6 @@ class ViewController: NSViewController {
     @IBOutlet weak var infoLabel: NSTextField!
     @IBOutlet var descriptionText: NSTextView!
     @IBOutlet weak var collectionView: NSCollectionView!
-    @IBOutlet weak var moreInfoLabel: NSTextField!
     @IBOutlet weak var websiteLabel: ClickableLabel!
     
     var item : AVPlayerItem!

@@ -713,13 +713,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="959" height="777"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <avPlayerView controlsStyle="inline" showsFrameSteppingButtons="YES" showsFullScreenToggleButton="YES" showsSharingServiceButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-QL-3hW" customClass="Player" customModule="MovieTrailers" customModuleProvider="target">
-                                <rect key="frame" x="305" y="20" width="643" height="386"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="643" id="OUI-ut-w97"/>
-                                    <constraint firstAttribute="height" constant="386" id="nQl-6I-UwK"/>
-                                </constraints>
-                            </avPlayerView>
                             <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-HU-D5V" userLabel="Scroll - Collection View">
                                 <rect key="frame" x="15" y="20" width="225" height="742"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="W2U-m0-N7M">
@@ -849,15 +842,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWU-59-1iG" customClass="ClickableLabel" customModule="MovieTrailers" customModuleProvider="target">
-                                <rect key="frame" x="303" y="421" width="54" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="More Info" id="O2Y-re-lrf">
-                                    <font key="font" metaFont="system" size="11"/>
-                                    <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-Sg-7hC">
                                 <rect key="frame" x="309" y="645" width="381" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -868,14 +852,21 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9m-cp-dqp" customClass="ClickableLabel" customModule="MovieTrailers" customModuleProvider="target">
-                                <rect key="frame" x="377" y="421" width="47" height="14"/>
+                                <rect key="frame" x="862" y="417" width="47" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Website" id="8Jg-Sq-S4O">
                                     <font key="font" metaFont="system" size="11"/>
-                                    <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="TextColor"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <avPlayerView misplaced="YES" controlsStyle="inline" showsFrameSteppingButtons="YES" showsFullScreenToggleButton="YES" showsSharingServiceButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-QL-3hW" customClass="Player" customModule="MovieTrailers" customModuleProvider="target">
+                                <rect key="frame" x="257" y="23" width="643" height="386"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="643" id="OUI-ut-w97"/>
+                                    <constraint firstAttribute="height" constant="386" id="nQl-6I-UwK"/>
+                                </constraints>
+                            </avPlayerView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="oWu-JN-xls" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="15" id="3op-WC-TvY"/>
@@ -899,7 +890,6 @@
                         <outlet property="directorLabel" destination="ngc-Sg-7hC" id="tiw-Sl-qh1"/>
                         <outlet property="imageView" destination="yEP-p9-fWT" id="oAp-83-PLN"/>
                         <outlet property="infoLabel" destination="5Wg-LN-7st" id="gTp-yW-8zK"/>
-                        <outlet property="moreInfoLabel" destination="xWU-59-1iG" id="zKr-Bq-W9E"/>
                         <outlet property="player" destination="Vkp-QL-3hW" id="H5Q-Q3-URh"/>
                         <outlet property="studioLabel" destination="DSN-YS-t2d" id="aEH-YG-pvE"/>
                         <outlet property="titleLabel" destination="oWu-JN-xls" id="ahh-wq-gjb"/>

@@ -115,14 +115,14 @@ class ViewController: NSViewController {
         //
         // clikable labels
 		//
-        if let url = URL(string: trailer.moviesite)
+        websiteLabel.isHidden = true
+        if let website = trailer.moviesite
         {
-            websiteLabel.isHidden = false
-            websiteLabel.setURL(url:url)
-        }
-        else
-        {
-            websiteLabel.isHidden = true
+            if let url = URL(string: website)
+            {
+                websiteLabel.isHidden = false
+                websiteLabel.setURL(url:url)
+            }
         }
         
         

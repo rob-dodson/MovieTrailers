@@ -849,12 +849,30 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWU-59-1iG" customClass="ClickableLabel" customModule="MovieTrailers" customModuleProvider="target">
+                                <rect key="frame" x="303" y="421" width="54" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="More Info" id="O2Y-re-lrf">
+                                    <font key="font" metaFont="system" size="11"/>
+                                    <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-Sg-7hC">
                                 <rect key="frame" x="309" y="645" width="381" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Director Name" id="0Ez-6Q-tTw">
                                     <font key="font" size="13" name="HelveticaNeue"/>
                                     <color key="textColor" name="TextColor"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9m-cp-dqp" customClass="ClickableLabel" customModule="MovieTrailers" customModuleProvider="target">
+                                <rect key="frame" x="377" y="421" width="47" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Website" id="8Jg-Sq-S4O">
+                                    <font key="font" metaFont="system" size="11"/>
+                                    <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -881,9 +899,11 @@
                         <outlet property="directorLabel" destination="ngc-Sg-7hC" id="tiw-Sl-qh1"/>
                         <outlet property="imageView" destination="yEP-p9-fWT" id="oAp-83-PLN"/>
                         <outlet property="infoLabel" destination="5Wg-LN-7st" id="gTp-yW-8zK"/>
+                        <outlet property="moreInfoLabel" destination="xWU-59-1iG" id="zKr-Bq-W9E"/>
                         <outlet property="player" destination="Vkp-QL-3hW" id="H5Q-Q3-URh"/>
                         <outlet property="studioLabel" destination="DSN-YS-t2d" id="aEH-YG-pvE"/>
                         <outlet property="titleLabel" destination="oWu-JN-xls" id="ahh-wq-gjb"/>
+                        <outlet property="websiteLabel" destination="e9m-cp-dqp" id="H03-NZ-V1Z"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -16,11 +16,12 @@ class ViewController: NSViewController {
     @IBOutlet weak var studioLabel: NSTextField!
     @IBOutlet weak var directorLabel: NSTextField!
     @IBOutlet weak var castLabel: NSTextField!
-    @IBOutlet weak var trailerList: NSCollectionView!
     @IBOutlet weak var imageView: NSImageView!
     @IBOutlet weak var infoLabel: NSTextField!
     @IBOutlet var descriptionText: NSTextView!
     @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var moreInfoLabel: NSTextField!
+    @IBOutlet weak var websiteLabel: ClickableLabel!
     
     var item : AVPlayerItem!
     var model : Model!
@@ -29,7 +30,7 @@ class ViewController: NSViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        
         model = Model()
         do
         {
@@ -112,7 +113,20 @@ class ViewController: NSViewController {
         directorLabel.stringValue = trailer.directors
         descriptionText.string = trailer.description ?? "no description"
         
+        //
+        // clikable labels
 		//
+        if let url = URL(string: trailer.moviesite)
+        {
+            websiteLabel.isHidden = false
+            websiteLabel.setURL(url:url)
+        }
+        else
+        {
+            websiteLabel.isHidden = true
+        }
+        
+        
 		// cast
 		//
         var cast = String()

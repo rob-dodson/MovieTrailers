@@ -12,6 +12,7 @@
 		AE050A11277B833D00E696F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE050A10277B833D00E696F6 /* Assets.xcassets */; };
 		AE050A14277B833D00E696F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE050A12277B833D00E696F6 /* Main.storyboard */; };
 		AE050A1C277B859800E696F6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE050A1B277B859800E696F6 /* Player.swift */; };
+		AE66DF262781416200384838 /* ClickableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66DF252781416200384838 /* ClickableLabel.swift */; };
 		AE9DF24D277E20D50065A648 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DF24C277E20D50065A648 /* Model.swift */; };
 		AE9DF254277E2D560065A648 /* trailerViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DF252277E2D560065A648 /* trailerViewItem.swift */; };
 		AE9DF255277E2D560065A648 /* trailerViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9DF253277E2D560065A648 /* trailerViewItem.xib */; };
@@ -27,6 +28,7 @@
 		AE050A13277B833D00E696F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE050A15277B833D00E696F6 /* Movies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Movies.entitlements; sourceTree = "<group>"; };
 		AE050A1B277B859800E696F6 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		AE66DF252781416200384838 /* ClickableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableLabel.swift; sourceTree = "<group>"; };
 		AE9DF24C277E20D50065A648 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AE9DF252277E2D560065A648 /* trailerViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trailerViewItem.swift; sourceTree = "<group>"; };
 		AE9DF253277E2D560065A648 /* trailerViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = trailerViewItem.xib; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				AE050A0C277B833C00E696F6 /* AppDelegate.swift */,
 				AE050A0E277B833C00E696F6 /* ViewController.swift */,
+				AE66DF252781416200384838 /* ClickableLabel.swift */,
 				AE9DF24C277E20D50065A648 /* Model.swift */,
 				AE050A12277B833D00E696F6 /* Main.storyboard */,
 				AEC1E1B5277BACC90084C4C4 /* Trailer.swift */,
@@ -160,6 +163,7 @@
 				AE050A1C277B859800E696F6 /* Player.swift in Sources */,
 				AE9DF254277E2D560065A648 /* trailerViewItem.swift in Sources */,
 				AE050A0D277B833C00E696F6 /* AppDelegate.swift in Sources */,
+				AE66DF262781416200384838 /* ClickableLabel.swift in Sources */,
 				AEC1E1B6277BACC90084C4C4 /* Trailer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@
 		AE050A14277B833D00E696F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE050A12277B833D00E696F6 /* Main.storyboard */; };
 		AE050A1C277B859800E696F6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE050A1B277B859800E696F6 /* Player.swift */; };
 		AE66DF262781416200384838 /* ClickableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66DF252781416200384838 /* ClickableLabel.swift */; };
+		AE66DF2927820BA400384838 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = AE66DF2827820BA400384838 /* Sparkle */; };
 		AE9DF24D277E20D50065A648 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DF24C277E20D50065A648 /* Model.swift */; };
 		AE9DF254277E2D560065A648 /* trailerViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9DF252277E2D560065A648 /* trailerViewItem.swift */; };
 		AE9DF255277E2D560065A648 /* trailerViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9DF253277E2D560065A648 /* trailerViewItem.xib */; };
@@ -29,6 +30,7 @@
 		AE050A15277B833D00E696F6 /* Movies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Movies.entitlements; sourceTree = "<group>"; };
 		AE050A1B277B859800E696F6 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		AE66DF252781416200384838 /* ClickableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableLabel.swift; sourceTree = "<group>"; };
+		AE66DF2A27820D9E00384838 /* MovieTrailers-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MovieTrailers-Info.plist"; sourceTree = "<group>"; };
 		AE9DF24C277E20D50065A648 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AE9DF252277E2D560065A648 /* trailerViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trailerViewItem.swift; sourceTree = "<group>"; };
 		AE9DF253277E2D560065A648 /* trailerViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = trailerViewItem.xib; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEC1E1B9277CC8B90084C4C4 /* SWXMLHash in Frameworks */,
+				AE66DF2927820BA400384838 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +53,7 @@
 		AE050A00277B833C00E696F6 = {
 			isa = PBXGroup;
 			children = (
+				AE66DF2A27820D9E00384838 /* MovieTrailers-Info.plist */,
 				AE050A0B277B833C00E696F6 /* Movies */,
 				AE050A0A277B833C00E696F6 /* Products */,
 			);
@@ -99,6 +103,7 @@
 			name = MovieTrailers;
 			packageProductDependencies = (
 				AEC1E1B8277CC8B90084C4C4 /* SWXMLHash */,
+				AE66DF2827820BA400384838 /* Sparkle */,
 			);
 			productName = Movies;
 			productReference = AE050A09277B833C00E696F6 /* MovieTrailers.app */;
@@ -130,6 +135,7 @@
 			mainGroup = AE050A00277B833C00E696F6;
 			packageReferences = (
 				AEC1E1B7277CC8B90084C4C4 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
+				AE66DF2727820BA400384838 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = AE050A0A277B833C00E696F6 /* Products */;
 			projectDirPath = "";
@@ -314,6 +320,7 @@
 				DEVELOPMENT_TEAM = ZYF5X8SV2F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MovieTrailers-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -342,6 +349,7 @@
 				DEVELOPMENT_TEAM = ZYF5X8SV2F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MovieTrailers-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -382,6 +390,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AE66DF2727820BA400384838 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				branch = 2.x;
+				kind = branch;
+			};
+		};
 		AEC1E1B7277CC8B90084C4C4 /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/drmohundro/SWXMLHash.git";
@@ -393,6 +409,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AE66DF2827820BA400384838 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE66DF2727820BA400384838 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
 		AEC1E1B8277CC8B90084C4C4 /* SWXMLHash */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AEC1E1B7277CC8B90084C4C4 /* XCRemoteSwiftPackageReference "SWXMLHash" */;

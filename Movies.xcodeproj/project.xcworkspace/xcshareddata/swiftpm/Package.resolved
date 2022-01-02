@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Sparkle",
+        "repositoryURL": "https://github.com/sparkle-project/Sparkle",
+        "state": {
+          "branch": "2.x",
+          "revision": "a1add127eb9f41b469893354fd86d29dcbf7723d",
+          "version": null
+        }
+      },
+      {
         "package": "SWXMLHash",
         "repositoryURL": "https://github.com/drmohundro/SWXMLHash.git",
         "state": {

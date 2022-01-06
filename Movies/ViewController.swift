@@ -113,7 +113,7 @@ class ViewController: NSViewController {
         descriptionText.string = trailer.description ?? "no description"
         
         //
-        // clikable labels
+        // clickable labels
 		//
         websiteLabel.isHidden = true
         if let website = trailer.moviesite
@@ -160,8 +160,15 @@ class ViewController: NSViewController {
         var releasedate = String()
         if trailer.trailers != nil && trailer.trailers.count > 0
         {
-            let parts = trailer.releasedate.split(separator: " ")
-            releasedate = String(format: "%@ %@",String(parts[2]),String(parts[3]))
+            if trailer.releasedate.count > 1
+            {
+                let parts = trailer.releasedate.split(separator: " ")
+                releasedate = String(format: "%@ %@",String(parts[2]),String(parts[3]))
+            }
+            else
+            {
+                releasedate = "no release date"
+            }
         }
         else
         {
@@ -170,8 +177,16 @@ class ViewController: NSViewController {
         
         if trailer.runtime == nil
         {
-            infoLabel.stringValue = String(format: "%@ ・ %@ ・ %@",
+            if trailer.genre.count > 0
+            {
+                infoLabel.stringValue = String(format: "%@ ・ %@ ・ %@",
                                        trailer.genre[0],releasedate,trailer.rating ?? "")
+            }
+            else
+            {
+                infoLabel.stringValue = String(format: "%@ ・ %@",
+                                       releasedate,trailer.rating ?? "")
+            }
         }
         else
         {

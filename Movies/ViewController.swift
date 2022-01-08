@@ -33,6 +33,14 @@ class ViewController: NSViewController {
         model = Model()
         do
         {
+            titleLabel.stringValue = ""
+            studioLabel.stringValue = ""
+            directorLabel.stringValue = ""
+            castLabel.stringValue = ""
+            infoLabel.stringValue = ""
+            websiteLabel.stringValue = ""
+            descriptionText.string = ""
+            
             try load()
         }
         catch

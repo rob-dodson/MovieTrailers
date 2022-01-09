@@ -9,7 +9,8 @@ import Cocoa
 import AVFoundation
 import SWXMLHash
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSSearchFieldDelegate
+{
 
     @IBOutlet weak var player: Player!
     @IBOutlet weak var titleLabel: NSTextField!
@@ -21,6 +22,7 @@ class ViewController: NSViewController {
     @IBOutlet var descriptionText: NSTextView!
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var websiteLabel: ClickableLabel!
+    @IBOutlet weak var searchField: NSSearchField!
     
     var item : AVPlayerItem!
     var model : Model!
@@ -41,6 +43,10 @@ class ViewController: NSViewController {
             websiteLabel.stringValue = ""
             descriptionText.string = ""
             
+            searchField.delegate = self
+            searchField.sendsWholeSearchString = false
+            searchField.sendsSearchStringImmediately = false
+            
             try load()
         }
         catch
@@ -58,7 +64,26 @@ class ViewController: NSViewController {
         }
     }
 
+    //
+    // search field
+    //
+    @IBAction func searchAction(_ sender: Any)
+    {
+        model.search(searchString:searchField.stringValue)
+    }
+    
+    func searchFieldDidStartSearching(_ sender: NSSearchField)
+    {
+    }
 
+    func searchFieldDidEndSearching(_ sender: NSSearchField)
+    {
+    }
+    
+   
+    //
+    // load trailers
+    //
     func load() throws
     {
         var trailers = Array<Trailer>();

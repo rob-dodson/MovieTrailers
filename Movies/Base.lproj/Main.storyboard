@@ -728,13 +728,13 @@
                                 </constraints>
                             </avPlayerView>
                             <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-HU-D5V" userLabel="Scroll - Collection View">
-                                <rect key="frame" x="25" y="20" width="225" height="742"/>
+                                <rect key="frame" x="25" y="20" width="225" height="695"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="W2U-m0-N7M">
-                                    <rect key="frame" x="0.0" y="0.0" width="225" height="742"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="225" height="695"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="4nX-VK-hAk">
-                                            <rect key="frame" x="0.0" y="0.0" width="225" height="742"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="225" height="695"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfRows="200" maximumNumberOfColumns="1" id="s0M-jL-zDp">
                                                 <size key="minimumItemSize" width="100" height="46"/>
@@ -752,7 +752,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="35t-Ck-xOS">
-                                    <rect key="frame" x="209" y="0.0" width="16" height="742"/>
+                                    <rect key="frame" x="209" y="0.0" width="16" height="695"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -879,6 +879,17 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzX-25-Uub">
+                                <rect key="frame" x="25" y="735" width="225" height="22"/>
+                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="3tT-zZ-hZ5">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </searchFieldCell>
+                                <connections>
+                                    <action selector="searchAction:" target="XfG-lQ-9wD" id="nDo-LC-cNt"/>
+                                </connections>
+                            </searchField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="bjO-bq-em0" firstAttribute="top" secondItem="IoU-cq-tlc" secondAttribute="bottom" constant="6" id="0dw-yo-DIz"/>
@@ -893,10 +904,14 @@
                             <constraint firstItem="oWu-JN-xls" firstAttribute="leading" secondItem="bjO-bq-em0" secondAttribute="leading" id="JDU-7e-DkL"/>
                             <constraint firstItem="5Wg-LN-7st" firstAttribute="leading" secondItem="oWu-JN-xls" secondAttribute="leading" id="JuZ-Ga-tgT"/>
                             <constraint firstItem="iRp-HU-D5V" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="25" id="MkG-Rl-osU"/>
+                            <constraint firstItem="vzX-25-Uub" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Obp-dT-aVf"/>
                             <constraint firstItem="yEP-p9-fWT" firstAttribute="trailing" secondItem="Vkp-QL-3hW" secondAttribute="trailing" id="SAh-Ti-iT3"/>
+                            <constraint firstItem="vzX-25-Uub" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="25" id="UsE-q7-0QV"/>
                             <constraint firstItem="IoU-cq-tlc" firstAttribute="top" secondItem="5Wg-LN-7st" secondAttribute="bottom" constant="18" id="VhG-Nd-Gs0"/>
+                            <constraint firstItem="iRp-HU-D5V" firstAttribute="top" secondItem="vzX-25-Uub" secondAttribute="bottom" constant="20" id="ZM5-6L-MBH"/>
                             <constraint firstItem="DSN-YS-t2d" firstAttribute="leading" secondItem="oWu-JN-xls" secondAttribute="leading" id="cRy-zC-O56"/>
                             <constraint firstAttribute="trailing" secondItem="oWu-JN-xls" secondAttribute="trailing" constant="34" id="cpY-5H-bBJ"/>
+                            <constraint firstItem="vzX-25-Uub" firstAttribute="trailing" secondItem="35t-Ck-xOS" secondAttribute="trailing" id="cw2-ye-bUy"/>
                             <constraint firstAttribute="trailing" secondItem="Vkp-QL-3hW" secondAttribute="trailing" constant="25" id="eaQ-bI-gPI"/>
                             <constraint firstItem="Knk-oW-KuN" firstAttribute="top" secondItem="ngc-Sg-7hC" secondAttribute="bottom" constant="6" id="j0l-QF-UxQ"/>
                             <constraint firstItem="yEP-p9-fWT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="60" id="k9y-uA-2ur"/>
@@ -906,7 +921,6 @@
                             <constraint firstItem="5Wg-LN-7st" firstAttribute="top" secondItem="DSN-YS-t2d" secondAttribute="bottom" constant="12" id="r3v-1b-vwI"/>
                             <constraint firstItem="6Ru-Ub-RRg" firstAttribute="leading" secondItem="oWu-JN-xls" secondAttribute="leading" id="r6l-10-UDa"/>
                             <constraint firstItem="oWu-JN-xls" firstAttribute="leading" secondItem="4nX-VK-hAk" secondAttribute="trailing" constant="25" id="rh5-Ox-hLJ"/>
-                            <constraint firstItem="iRp-HU-D5V" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="15" id="uLI-ka-9qQ"/>
                             <constraint firstItem="IoU-cq-tlc" firstAttribute="leading" secondItem="oWu-JN-xls" secondAttribute="leading" id="ubf-Wj-ODa"/>
                             <constraint firstItem="ngc-Sg-7hC" firstAttribute="leading" secondItem="IoU-cq-tlc" secondAttribute="trailing" constant="10" id="ud1-lg-fch"/>
                             <constraint firstItem="6Ru-Ub-RRg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="200" id="zzJ-CD-VXM"/>
@@ -920,6 +934,7 @@
                         <outlet property="imageView" destination="yEP-p9-fWT" id="oAp-83-PLN"/>
                         <outlet property="infoLabel" destination="5Wg-LN-7st" id="gTp-yW-8zK"/>
                         <outlet property="player" destination="Vkp-QL-3hW" id="H5Q-Q3-URh"/>
+                        <outlet property="searchField" destination="vzX-25-Uub" id="SDA-Jr-KTp"/>
                         <outlet property="studioLabel" destination="DSN-YS-t2d" id="aEH-YG-pvE"/>
                         <outlet property="titleLabel" destination="oWu-JN-xls" id="ahh-wq-gjb"/>
                         <outlet property="websiteLabel" destination="e9m-cp-dqp" id="H03-NZ-V1Z"/>

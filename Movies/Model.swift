@@ -11,40 +11,65 @@ import AppKit
 class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
 {
     var trailers : Array<Trailer>!
+    var visibletrailers : Array<Trailer>!
     var tempImage : NSImage!
     var controller : ViewController!
     var fontsmall  : NSFont!
     var fontmed  : NSFont!
     var fontlarge  : NSFont!
     var cache : NSCache<NSString,NSImage>!
-
     
     func setup(list:Array<Trailer>,controller:ViewController)
     {
         self.trailers = list
+        
+        var index = 0
+        visibletrailers = Array<Trailer>()
+        for trailer in trailers
+        {
+            visibletrailers.append(trailer)
+            index = index + 1
+        }
+        
         self.controller = controller
         
         cache = NSCache()
-
+        
+        
         tempImage = NSImage(named:"temp")
         fontsmall = NSFont(name: "Helvetica Neue Condensed Bold", size: 13.0)
         fontmed = NSFont(name: "Helvetica Neue Condensed Bold", size: 14.0)
         fontlarge = NSFont(name: "Helvetica Neue Condensed Bold", size: 15.0)
+    }
     
+    
+    func search(searchString:String)
+    {
+        visibletrailers = Array<Trailer>()
+        for trailer in trailers
+        {
+            if trailer.title.uppercased().contains(searchString.uppercased()) || searchString == ""
+            {
+                visibletrailers.append(trailer)
+            }
+        }
+        
+        controller.collectionView.reloadData()
     }
     
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return trailers.count
+        return visibletrailers.count
     }
     
 
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem
     {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "dataSourceItem"), for: indexPath) as! trailerViewItem
-        let trailer = trailers[indexPath.item]
+        let trailer = visibletrailers[indexPath.item]
         
+       
 		//
 		// adjust font size for title if too long. 
 		// Just based on word count, not too smart.
@@ -100,7 +125,7 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>)
     {
-        let trailer = trailers[indexPaths.first!.item]
+        let trailer = visibletrailers[indexPaths.first!.item]
         controller.play(trailer: trailer)
     }
 }

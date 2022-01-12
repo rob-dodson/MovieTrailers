@@ -243,12 +243,20 @@ class ViewController: NSViewController, NSSearchFieldDelegate
             preview = "https://movietrailers.apple.com/movies" + s! + trailer.title.lowercased() + "-trailer-1_i320.m4v"
             preview = preview.replacingOccurrences(of: " ", with: "-")
         }
-        print("Vid URL " + preview)
+        preview = preview.replacingOccurrences(of: "'", with: "")
         
-        item = AVPlayerItem(url: NSURL.init(string:preview)! as URL)
-        player.player = AVPlayer(playerItem: item)
-        player.player?.play()
-        
+        print("Vid URL" + preview)
+        if let url = URL(string:preview)
+        {
+            item = AVPlayerItem(url: url)
+            player.player = AVPlayer(playerItem: item)
+            player.player?.play()
+        }
+        else
+        {
+            player.player?.pause()
+            player.player =  AVPlayer(playerItem: nil)
+        }
 
 		//
 		// description - we have it from the xml or will scrape from Apple's trailer page

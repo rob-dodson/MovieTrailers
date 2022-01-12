@@ -24,6 +24,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate
     @IBOutlet weak var websiteLabel: ClickableLabel!
     @IBOutlet weak var searchField: NSSearchField!
     
+    @IBOutlet weak var errorLabel: NSTextField!
     var item : AVPlayerItem!
     var model : Model!
 
@@ -46,6 +47,8 @@ class ViewController: NSViewController, NSSearchFieldDelegate
             searchField.delegate = self
             searchField.sendsWholeSearchString = false
             searchField.sendsSearchStringImmediately = false
+            
+            errorLabel.isHidden = true
             
             try load()
         }
@@ -144,7 +147,8 @@ class ViewController: NSViewController, NSSearchFieldDelegate
         studioLabel.stringValue = trailer.studio
         directorLabel.stringValue = trailer.directors
         descriptionText.string = trailer.description ?? "no description"
-        
+        errorLabel.isHidden = true
+
         //
         // clickable labels
 		//
@@ -251,9 +255,25 @@ class ViewController: NSViewController, NSSearchFieldDelegate
             item = AVPlayerItem(url: url)
             player.player = AVPlayer(playerItem: item)
             player.player?.play()
+            
+            DispatchQueue.global().async
+            {
+                sleep(2)
+                if self.item.status != .readyToPlay
+                {
+                    DispatchQueue.main.async
+                    {
+                        self.errorLabel.isHidden = false
+                        self.errorLabel.stringValue = "Sorry the trailer won't load."
+                    }
+                }
+            }
         }
         else
         {
+            errorLabel.isHidden = false
+            errorLabel.stringValue = "Sorry I can't find the trailer."
+
             player.player?.pause()
             player.player =  AVPlayer(playerItem: nil)
         }

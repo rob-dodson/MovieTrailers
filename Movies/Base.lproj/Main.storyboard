@@ -890,6 +890,15 @@
                                     <action selector="searchAction:" target="XfG-lQ-9wD" id="nDo-LC-cNt"/>
                                 </connections>
                             </searchField>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yzi-VH-KNP">
+                                <rect key="frame" x="273" y="418" width="375" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="error" id="ix4-cq-x7d">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="bjO-bq-em0" firstAttribute="top" secondItem="IoU-cq-tlc" secondAttribute="bottom" constant="6" id="0dw-yo-DIz"/>
@@ -931,6 +940,7 @@
                         <outlet property="collectionView" destination="4nX-VK-hAk" id="7Ip-bk-ArA"/>
                         <outlet property="descriptionText" destination="BfI-kD-dmH" id="cfo-OD-pc3"/>
                         <outlet property="directorLabel" destination="ngc-Sg-7hC" id="tiw-Sl-qh1"/>
+                        <outlet property="errorLabel" destination="Yzi-VH-KNP" id="0fv-VP-dhJ"/>
                         <outlet property="imageView" destination="yEP-p9-fWT" id="oAp-83-PLN"/>
                         <outlet property="infoLabel" destination="5Wg-LN-7st" id="gTp-yW-8zK"/>
                         <outlet property="player" destination="Vkp-QL-3hW" id="H5Q-Q3-URh"/>

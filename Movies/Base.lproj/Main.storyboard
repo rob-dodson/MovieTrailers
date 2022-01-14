@@ -846,10 +846,10 @@
                                             <size key="minSize" width="423" height="125"/>
                                             <size key="maxSize" width="448" height="10000000"/>
                                             <attributedString key="textStorage">
-                                                <fragment content="description">
+                                                <fragment content="Description">
                                                     <attributes>
                                                         <color key="NSColor" name="TextColor"/>
-                                                        <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -957,7 +957,7 @@
     </scenes>
     <resources>
         <namedColor name="TextColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63200002908706665" green="0.63200002908706665" blue="0.63200002908706665" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

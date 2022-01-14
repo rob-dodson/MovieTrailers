@@ -42,7 +42,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate
             castLabel.stringValue = ""
             infoLabel.stringValue = ""
             websiteLabel.stringValue = ""
-            descriptionText.string = ""
+            descriptionText.string = " " // making it "" resets the font colors and sizes
             
             searchField.delegate = self
             searchField.sendsWholeSearchString = false

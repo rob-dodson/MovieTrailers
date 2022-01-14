@@ -23,12 +23,10 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
     {
         self.trailers = list
         
-        var index = 0
         visibletrailers = Array<Trailer>()
         for trailer in trailers
         {
             visibletrailers.append(trailer)
-            index = index + 1
         }
         
         self.controller = controller

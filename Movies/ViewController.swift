@@ -253,7 +253,14 @@ class ViewController: NSViewController, NSSearchFieldDelegate
         if let url = URL(string:preview)
         {
             item = AVPlayerItem(url: url)
-            player.player = AVPlayer(playerItem: item)
+            if player.player == nil
+            {
+                player.player = AVPlayer(playerItem: item)
+            }
+            else
+            {
+                player.player?.replaceCurrentItem(with: item) 
+            }
             player.player?.play()
             
             DispatchQueue.global().async

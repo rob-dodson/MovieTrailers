@@ -36,12 +36,12 @@ class ViewController: NSViewController, NSSearchFieldDelegate
         model = Model()
         do
         {
-            titleLabel.stringValue = ""
-            studioLabel.stringValue = ""
-            directorLabel.stringValue = ""
-            castLabel.stringValue = ""
-            infoLabel.stringValue = ""
-            websiteLabel.stringValue = ""
+            titleLabel.stringValue = " "
+            studioLabel.stringValue = " "
+            directorLabel.stringValue = " "
+            castLabel.stringValue = " "
+            infoLabel.stringValue = " "
+            websiteLabel.isHidden = true
             descriptionText.string = " " // making it "" resets the font colors and sizes
             
             searchField.delegate = self
@@ -153,8 +153,13 @@ class ViewController: NSViewController, NSSearchFieldDelegate
         // clickable labels
 		//
         websiteLabel.isHidden = true
-        if let website = trailer.moviesite
+        if var website = trailer.moviesite
         {
+            if !website.hasPrefix("http")
+            {
+                website = "https://" + website
+            }
+            
             if let url = URL(string: website)
             {
                 websiteLabel.isHidden = false

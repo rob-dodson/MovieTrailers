@@ -871,14 +871,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e9m-cp-dqp" customClass="ClickableLabel" customModule="MovieTrailers" customModuleProvider="target">
-                                <rect key="frame" x="863" y="419" width="47" height="14"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Website" id="8Jg-Sq-S4O">
-                                    <font key="font" metaFont="smallSystem"/>
-                                    <color key="textColor" name="TextColor"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzX-25-Uub">
                                 <rect key="frame" x="25" y="735" width="225" height="22"/>
                                 <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="3tT-zZ-hZ5">
@@ -896,6 +888,14 @@
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="error" id="ix4-cq-x7d">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e9m-cp-dqp" customClass="ClickableLabel" customModule="MovieTrailers" customModuleProvider="target">
+                                <rect key="frame" x="863" y="421" width="47" height="12"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Website" placeholderString="website" id="8Jg-Sq-S4O">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="TextColor"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -921,6 +921,7 @@
                             <constraint firstItem="DSN-YS-t2d" firstAttribute="leading" secondItem="oWu-JN-xls" secondAttribute="leading" id="cRy-zC-O56"/>
                             <constraint firstAttribute="trailing" secondItem="oWu-JN-xls" secondAttribute="trailing" constant="34" id="cpY-5H-bBJ"/>
                             <constraint firstItem="vzX-25-Uub" firstAttribute="trailing" secondItem="35t-Ck-xOS" secondAttribute="trailing" id="cw2-ye-bUy"/>
+                            <constraint firstItem="Vkp-QL-3hW" firstAttribute="top" secondItem="e9m-cp-dqp" secondAttribute="bottom" constant="15" id="dkT-gx-fhF"/>
                             <constraint firstAttribute="trailing" secondItem="Vkp-QL-3hW" secondAttribute="trailing" constant="25" id="eaQ-bI-gPI"/>
                             <constraint firstItem="Knk-oW-KuN" firstAttribute="top" secondItem="ngc-Sg-7hC" secondAttribute="bottom" constant="6" id="j0l-QF-UxQ"/>
                             <constraint firstItem="yEP-p9-fWT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="60" id="k9y-uA-2ur"/>
@@ -947,7 +948,7 @@
                         <outlet property="searchField" destination="vzX-25-Uub" id="SDA-Jr-KTp"/>
                         <outlet property="studioLabel" destination="DSN-YS-t2d" id="aEH-YG-pvE"/>
                         <outlet property="titleLabel" destination="oWu-JN-xls" id="ahh-wq-gjb"/>
-                        <outlet property="websiteLabel" destination="e9m-cp-dqp" id="H03-NZ-V1Z"/>
+                        <outlet property="websiteLabel" destination="e9m-cp-dqp" id="qXF-iD-bI9"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -957,7 +958,7 @@
     </scenes>
     <resources>
         <namedColor name="TextColor">
-            <color red="0.63200002908706665" green="0.63200002908706665" blue="0.63200002908706665" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.38600000739097595" green="0.38600000739097595" blue="0.38600000739097595" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

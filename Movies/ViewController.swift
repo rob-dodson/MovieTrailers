@@ -271,7 +271,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate
                     DispatchQueue.main.async
                     {
                         self.errorLabel.isHidden = false
-                        self.errorLabel.stringValue = "Sorry the trailer won't load."
+                        self.errorLabel.stringValue = "Sorry, the trailer won't load."
                     }
                 }
             }
@@ -279,7 +279,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate
         else
         {
             errorLabel.isHidden = false
-            errorLabel.stringValue = "Sorry I can't find the trailer."
+            errorLabel.stringValue = "Sorry, I can't find the trailer."
 
             player.player?.pause()
             player.player =  AVPlayer(playerItem: nil)

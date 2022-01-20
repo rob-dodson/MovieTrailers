@@ -108,7 +108,7 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
             {
                 var url : URL
                 
-                if ftrailer.poster.hasPrefix("/trailers")
+                if trailer.poster.hasPrefix("/trailers")
                 {
                     url = URL(string: "https://trailers.apple.com/" + trailer.poster)!
                 }

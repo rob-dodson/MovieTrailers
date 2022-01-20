@@ -193,8 +193,11 @@ class ViewController: NSViewController, NSSearchFieldDelegate
 
 		//
 		// large poster
-        imageView.image = NSImage(contentsOf: URL(string: trailer.poster_2x)!)
-        
+        let url = URL(string: "https://trailers.apple.com/" + trailer.poster_2x)
+        if let image = NSImage(contentsOf: url!)
+        {
+            imageView.image = image
+        }
 
 		//
 		// misc info

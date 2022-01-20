@@ -106,9 +106,18 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
 			//
             DispatchQueue.global(qos: .userInitiated).async
             {
-                let url = URL(string: "https://trailers.apple.com/" + trailer.poster)
-                              
-                if let image = NSImage(contentsOf: url!)
+                var url : URL
+                
+                if ftrailer.poster.hasPrefix("/trailers")
+                {
+                    url = URL(string: "https://trailers.apple.com/" + trailer.poster)!
+                }
+                else
+                {
+                    url = URL(string:trailer.poster)!
+                }
+                
+                if let image = NSImage(contentsOf: url)
                 {
                     let key = trailer.title as NSString
                     self.cache.setObject(image, forKey: key)

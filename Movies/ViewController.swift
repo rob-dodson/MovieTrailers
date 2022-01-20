@@ -33,6 +33,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate
     {
         super.viewDidLoad()
         
+        
         model = Model()
         do
         {

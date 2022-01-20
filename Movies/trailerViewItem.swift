@@ -16,7 +16,17 @@ class trailerViewItem: NSCollectionViewItem
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do view setup here.
     }
+    
+    //
+    // highlight selected item
+    //
+    override var isSelected: Bool
+    {
+        didSet
+        {
+          self.view.layer?.backgroundColor = (isSelected ? NSColor.systemGray.cgColor : NSColor.clear.cgColor)
+        }
+      }
     
 }

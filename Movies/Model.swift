@@ -18,6 +18,7 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
     var fontmed  : NSFont!
     var fontlarge  : NSFont!
     var cache : NSCache<NSString,NSImage>!
+
     
     func setup(list:Array<Trailer>,controller:ViewController)
     {
@@ -54,6 +55,9 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
         
         controller.collectionView.reloadData()
     }
+    
+
+    
     
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int
@@ -140,6 +144,7 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
         return item
     }
 
+    var selectedItem : NSCollectionViewItem!
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>)
     {

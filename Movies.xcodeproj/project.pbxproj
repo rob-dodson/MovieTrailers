@@ -33,6 +33,7 @@
 		AE66DF252781416200384838 /* ClickableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableLabel.swift; sourceTree = "<group>"; };
 		AE66DF2A27820D9E00384838 /* MovieTrailers-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MovieTrailers-Info.plist"; sourceTree = "<group>"; };
 		AE90A2EC279B1D1200C5DE5E /* String+regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+regex.swift"; sourceTree = "<group>"; };
+		AE90A2EE279B21F500C5DE5E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AE9DF24C277E20D50065A648 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AE9DF252277E2D560065A648 /* trailerViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trailerViewItem.swift; sourceTree = "<group>"; };
 		AE9DF253277E2D560065A648 /* trailerViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = trailerViewItem.xib; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		AE050A00277B833C00E696F6 = {
 			isa = PBXGroup;
 			children = (
+				AE90A2EE279B21F500C5DE5E /* README.md */,
 				AE66DF2A27820D9E00384838 /* MovieTrailers-Info.plist */,
 				AE050A0B277B833C00E696F6 /* Movies */,
 				AE050A0A277B833C00E696F6 /* Products */,

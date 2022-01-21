@@ -110,16 +110,7 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
 			//
             DispatchQueue.global(qos: .userInitiated).async
             {
-                var url : URL
-                
-                if trailer.poster.hasPrefix("/trailers")
-                {
-                    url = URL(string: "https://trailers.apple.com/" + trailer.poster)!
-                }
-                else
-                {
-                    url = URL(string:trailer.poster)!
-                }
+                let url = trailer.makePosterURL(big: false)
                 
                 if let image = NSImage(contentsOf: url)
                 {

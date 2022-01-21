@@ -84,4 +84,26 @@ class Trailer : Decodable
         let parts1 = date.split(separator:"-")
         releasedate = String(parts1[0])
    }
+    
+    
+    func makePosterURL(big:Bool) -> URL
+    {
+        var url : URL!
+        
+        if let posterString = (big == true) ? poster_2x : poster
+        {
+            if posterString.hasPrefix("/trailers")
+            {
+                url = URL(string: "https://trailers.apple.com/" + posterString)!
+            }
+            else
+            {
+                url = URL(string: posterString)!
+            }
+        }
+        
+        return url
+    }
+
 }
+

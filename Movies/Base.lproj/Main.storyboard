@@ -954,7 +954,7 @@
     </scenes>
     <resources>
         <namedColor name="TextColor">
-            <color red="0.33149372517448106" green="0.33149372517448106" blue="0.33149372517448106" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.33100000023841858" green="0.33100000023841858" blue="0.33100000023841858" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

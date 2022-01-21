@@ -194,16 +194,8 @@ class ViewController: NSViewController, NSSearchFieldDelegate
 
 		//
 		// large poster
-        var url : URL
-        
-        if trailer.poster.hasPrefix("/trailers")
-        {
-            url = URL(string: "https://trailers.apple.com/" + trailer.poster_2x)!
-        }
-        else
-        {
-            url = URL(string:trailer.poster_2x)!
-        }
+        //
+        let url = trailer.makePosterURL(big: true)
         
         if let image = NSImage(contentsOf: url)
         {

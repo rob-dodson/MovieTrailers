@@ -20,13 +20,13 @@ class trailerViewItem: NSCollectionViewItem
     
     //
     // highlight selected item. This bit of code is all you need to have
-    // the selected item be highlighted in a NSCollectionView
+    // the selected item be highlighted in an NSCollectionView
     //
     override var isSelected: Bool
     {
         didSet
         {
-          self.view.layer?.backgroundColor = (isSelected ? NSColor.systemGray.cgColor : NSColor.clear.cgColor)
+            self.view.layer?.backgroundColor = (isSelected ? NSColor.systemGray.cgColor : NSColor.clear.cgColor)
         }
       }
     

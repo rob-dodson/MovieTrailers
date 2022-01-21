@@ -57,9 +57,6 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
     }
     
 
-    
-    
-    
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return visibletrailers.count
@@ -135,8 +132,10 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
         return item
     }
 
-    var selectedItem : NSCollectionViewItem!
     
+    //
+    // User has clicked on an item
+    //
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>)
     {
         let trailer = visibletrailers[indexPaths.first!.item]

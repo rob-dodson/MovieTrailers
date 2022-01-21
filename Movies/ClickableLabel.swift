@@ -17,6 +17,9 @@ class ClickableLabel : NSTextField
         self.url = url
     }
     
+    //
+    // Open web browser with the label's URL
+    //
     override func mouseDown(with event: NSEvent)
     {
         NSWorkspace.shared.open(url)

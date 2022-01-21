@@ -23,8 +23,8 @@ class ViewController: NSViewController, NSSearchFieldDelegate
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var websiteLabel: ClickableLabel!
     @IBOutlet weak var searchField: NSSearchField!
-    
     @IBOutlet weak var errorLabel: NSTextField!
+    
     var item : AVPlayerItem!
     var model : Model!
 
@@ -33,8 +33,8 @@ class ViewController: NSViewController, NSSearchFieldDelegate
     {
         super.viewDidLoad()
         
-        
         model = Model()
+        
         do
         {
             titleLabel.stringValue = " "
@@ -55,19 +55,11 @@ class ViewController: NSViewController, NSSearchFieldDelegate
         }
         catch
         {
-            NSLog("Error loading trailer list")
+            print("Error loading trailer list")
         }
     }
 
-
-    override var representedObject: Any?
-    {
-        didSet
-        {
-        // Update the view, if already loaded.
-        }
-    }
-
+    
     //
     // search field
     //
@@ -150,6 +142,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate
         descriptionText.string = trailer.description ?? "no description"
         errorLabel.isHidden = true
 
+        
         //
         // clickable labels
 		//
@@ -169,6 +162,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate
         }
         
         
+        //
 		// cast
 		//
         var cast = String()
@@ -196,12 +190,12 @@ class ViewController: NSViewController, NSSearchFieldDelegate
 		// large poster
         //
         let url = trailer.makePosterURL(big: true)
-        
         if let image = NSImage(contentsOf: url)
         {
             imageView.image = image
         }
 
+        
 		//
 		// misc info
 		//
@@ -259,8 +253,9 @@ class ViewController: NSViewController, NSSearchFieldDelegate
             preview = preview.replacingOccurrences(of: " ", with: "-")
         }
         preview = preview.replacingOccurrences(of: "'", with: "")
+       
         
-        print("Vid URL" + preview)
+        print("Trailer preview URL" + preview)
         if let url = URL(string:preview)
         {
             item = AVPlayerItem(url: url)
@@ -296,6 +291,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate
             player.player =  AVPlayer(playerItem: nil)
         }
 
+        
 		//
 		// description - we have it from the xml or will scrape from Apple's trailer page
 		//
@@ -307,7 +303,7 @@ class ViewController: NSViewController, NSSearchFieldDelegate
             }
             catch
             {
-                
+                print("Error getting description: \(error)")
             }
         }
     }
@@ -315,7 +311,6 @@ class ViewController: NSViewController, NSSearchFieldDelegate
     
     func getDescription(trailer:Trailer) throws
     {
-		
         /*
 		 Sample description
 
@@ -362,38 +357,5 @@ class ViewController: NSViewController, NSSearchFieldDelegate
 }
 
 
-extension String
-{
 
-    public func matchRegex(regex: String) throws -> [NSTextCheckingResult]
-    {
-        let re = try NSRegularExpression(pattern: regex, options: [])
-        return re.matches(in: self, options:[], range:NSMakeRange(0,self.count))
-    }
-
-
-    public func match(regex: String) -> [[String]]
-    {
-        let nsString = self as NSString
-
-        do
-        {
-            let re = try NSRegularExpression(pattern: regex,options: [])
-
-            let matches = re.matches(in:self, options:[], range:NSMakeRange(0, count)).map
-            { match in
-                (0..<match.numberOfRanges).map
-                {
-                    match.range(at: $0).location == NSNotFound ? "" : nsString.substring(with: match.range(at: $0))
-                }
-            }
-
-            return matches
-        }
-        catch
-        {
-            return []
-        }
-    }
-}
 

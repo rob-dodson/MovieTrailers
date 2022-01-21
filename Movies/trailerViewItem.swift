@@ -19,7 +19,8 @@ class trailerViewItem: NSCollectionViewItem
     }
     
     //
-    // highlight selected item
+    // highlight selected item. This bit of code is all you need to have
+    // the selected item be highlighted in a NSCollectionView
     //
     override var isSelected: Bool
     {

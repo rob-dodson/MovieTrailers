@@ -829,17 +829,17 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ru-Ub-RRg">
-                                <rect key="frame" x="275" y="452" width="423" height="125"/>
+                                <rect key="frame" x="275" y="447" width="423" height="130"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="TcG-3p-UQE">
-                                    <rect key="frame" x="0.0" y="0.0" width="423" height="125"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="423" height="130"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" id="BfI-kD-dmH">
-                                            <rect key="frame" x="0.0" y="0.0" width="423" height="125"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="423" height="130"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="TextColor"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="423" height="125"/>
+                                            <size key="minSize" width="423" height="130"/>
                                             <size key="maxSize" width="448" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="Description">
@@ -856,14 +856,14 @@
                                 </clipView>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="423" id="Fv5-jZ-6fa"/>
-                                    <constraint firstAttribute="height" constant="125" id="dh0-z3-qJr"/>
+                                    <constraint firstAttribute="height" constant="130" id="dh0-z3-qJr"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="kEg-uy-2dy">
                                     <rect key="frame" x="-100" y="-100" width="423" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="cZz-Ud-9wP">
-                                    <rect key="frame" x="407" y="0.0" width="16" height="125"/>
+                                    <rect key="frame" x="407" y="0.0" width="16" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -954,7 +954,7 @@
     </scenes>
     <resources>
         <namedColor name="TextColor">
-            <color red="0.38600000739097595" green="0.38600000739097595" blue="0.38600000739097595" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.33149372517448106" green="0.33149372517448106" blue="0.33149372517448106" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

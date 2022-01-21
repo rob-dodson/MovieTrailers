@@ -9,3 +9,4 @@ For a pre-built binary click [here](https://robdodson.net/MovieTrailers/download
 ## To Do
 - Full screen mode does not work on Intel machines for some reason.
 - Better video file url guessing.
+- Get higher resolution trailers when needed.

@@ -27,9 +27,9 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="HxA-gf-jmq"/>
                 </imageView>
                 <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcO-Rr-Aih">
-                    <rect key="frame" x="64" y="14" width="143" height="40"/>
+                    <rect key="frame" x="64" y="19" width="143" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="zff-gi-INo"/>
+                        <constraint firstAttribute="height" constant="30" id="zff-gi-INo"/>
                     </constraints>
                     <textFieldCell key="cell" allowsUndo="NO" alignment="left" title="title" id="6ZA-nx-TpX">
                         <font key="font" size="15" name="HelveticaNeue-CondensedBold"/>

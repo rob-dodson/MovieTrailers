@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.AVKitIBPlugin" version="19529"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="20037"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -103,7 +103,8 @@
                                                 <action selector="saveDocument:" target="Ady-hI-5gd" id="teZ-XB-qJY"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Save As…" keyEquivalent="S" id="Bw7-FT-i3A">
+                                        <menuItem title="Save As…" keyEquivalent="s" id="Bw7-FT-i3A">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                             <connections>
                                                 <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="mDf-zr-I0C"/>
                                             </connections>
@@ -721,18 +722,18 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <avPlayerView controlsStyle="inline" showsFrameSteppingButtons="YES" showsFullScreenToggleButton="YES" showsSharingServiceButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-QL-3hW" customClass="Player" customModule="MovieTrailers" customModuleProvider="target">
-                                <rect key="frame" x="275" y="20" width="643" height="386"/>
+                                <rect key="frame" x="260" y="20" width="658" height="386"/>
                             </avPlayerView>
                             <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRp-HU-D5V" userLabel="Scroll - Collection View">
                                 <rect key="frame" x="25" y="20" width="225" height="695"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="W2U-m0-N7M">
-                                    <rect key="frame" x="0.0" y="0.0" width="225" height="695"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="210" height="695"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="4nX-VK-hAk">
-                                            <rect key="frame" x="0.0" y="0.0" width="225" height="695"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="210" height="695"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfRows="200" maximumNumberOfColumns="1" id="s0M-jL-zDp">
+                                            <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfColumns="1" id="s0M-jL-zDp">
                                                 <size key="minimumItemSize" width="100" height="46"/>
                                                 <size key="maximumItemSize" width="200" height="46"/>
                                             </collectionViewGridLayout>
@@ -748,12 +749,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="35t-Ck-xOS">
-                                    <rect key="frame" x="209" y="0.0" width="16" height="695"/>
+                                    <rect key="frame" x="210" y="0.0" width="15" height="695"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IoU-cq-tlc">
-                                <rect key="frame" x="273" y="646" width="50" height="15"/>
+                                <rect key="frame" x="258" y="646" width="50" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Director" id="M0b-RK-1L9">
                                     <font key="font" size="13" name="HelveticaNeue"/>
                                     <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
@@ -761,7 +762,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Wg-LN-7st">
-                                <rect key="frame" x="273" y="679" width="439" height="16"/>
+                                <rect key="frame" x="258" y="679" width="439" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="435" id="FV7-Kc-HkZ"/>
                                     <constraint firstAttribute="height" constant="16" id="zmN-uS-U8g"/>
@@ -781,7 +782,7 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="R1Y-PI-udn"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bjO-bq-em0">
-                                <rect key="frame" x="273" y="625" width="50" height="15"/>
+                                <rect key="frame" x="258" y="625" width="50" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Starring" id="1pe-Oj-Qes">
                                     <font key="font" size="13" name="HelveticaNeue"/>
                                     <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
@@ -789,7 +790,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oWu-JN-xls">
-                                <rect key="frame" x="273" y="726" width="638" height="36"/>
+                                <rect key="frame" x="258" y="726" width="653" height="36"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Title" id="qR3-uE-Zan">
                                     <font key="font" size="30" name="HelveticaNeue-CondensedBold"/>
                                     <color key="textColor" name="TextColor"/>
@@ -797,7 +798,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DSN-YS-t2d">
-                                <rect key="frame" x="273" y="707" width="262" height="16"/>
+                                <rect key="frame" x="258" y="707" width="262" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="4Eb-Bs-Gjp"/>
                                     <constraint firstAttribute="width" constant="258" id="CWn-ch-xz5"/>
@@ -809,7 +810,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Knk-oW-KuN">
-                                <rect key="frame" x="329" y="584" width="338" height="55"/>
+                                <rect key="frame" x="314" y="584" width="338" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="334" id="e1C-aV-XJn"/>
                                     <constraint firstAttribute="height" constant="55" id="n40-gU-S7F"/>
@@ -821,7 +822,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-Sg-7hC">
-                                <rect key="frame" x="329" y="645" width="89" height="15"/>
+                                <rect key="frame" x="314" y="645" width="89" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Director Name" id="0Ez-6Q-tTw">
                                     <font key="font" size="13" name="HelveticaNeue"/>
                                     <color key="textColor" name="TextColor"/>
@@ -829,17 +830,17 @@
                                 </textFieldCell>
                             </textField>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ru-Ub-RRg">
-                                <rect key="frame" x="275" y="447" width="423" height="130"/>
+                                <rect key="frame" x="260" y="447" width="423" height="130"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="TcG-3p-UQE">
-                                    <rect key="frame" x="0.0" y="0.0" width="423" height="130"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="408" height="130"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" id="BfI-kD-dmH">
-                                            <rect key="frame" x="0.0" y="0.0" width="423" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="130"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="TextColor"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="423" height="130"/>
+                                            <size key="minSize" width="408" height="130"/>
                                             <size key="maxSize" width="448" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="Description">
@@ -863,7 +864,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="cZz-Ud-9wP">
-                                    <rect key="frame" x="407" y="0.0" width="16" height="130"/>
+                                    <rect key="frame" x="408" y="0.0" width="15" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>

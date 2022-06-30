@@ -8,6 +8,7 @@
 import Cocoa
 import AVFoundation
 import SWXMLHash
+import RegexBuilder
 
 
 class ViewController: NSViewController, NSSearchFieldDelegate
@@ -327,36 +328,61 @@ class ViewController: NSViewController, NSSearchFieldDelegate
             let html = try String(contentsOf: url, encoding: String.defaultCStringEncoding)
             
             print("html url: " + url.description)
-            
-            let matches = html.match(regex: "<meta name=\"Description\".*>")
-            if matches.count > 0
+
+
+            if #available(macOS 13.0, *)
             {
-                var desc = matches[0].description
-
-				//
-				// strip out cruft from desc
-				//
-                desc = desc.replacingOccurrences(of: "[\"<meta name=\\\"Description\\\" content=\\\"", with: "")
-                desc = desc.replacingOccurrences(of: "\\\" />\"]", with: "")
-
-				//
-				// replace special symbol codes with the symbol
-				//
-                desc = desc.replacingOccurrences(of: "‚Äú", with: "\"")
-                desc = desc.replacingOccurrences(of: "‚Äù", with: "\"")
-                desc = desc.replacingOccurrences(of: "‚Äô", with: "'")
-                desc = desc.replacingOccurrences(of: "\\\'", with: "'")
-                desc = desc.replacingOccurrences(of: "\\\"", with: "\"")
-                desc = desc.replacingOccurrences(of: " ‚Äì", with:",")
-                desc = desc.replacingOccurrences(of: "¬Æ", with:"®")
-                desc = desc.replacingOccurrences(of: "√Ø", with:"ï")
-
-                descriptionText.string = desc
+                
+                let regex = Regex {
+                    Capture {
+                        "<meta name=\"Description\""
+                        ZeroOrMore(.any)
+                        ">"
+                    }
+                }
+                
+                if let match = try regex.firstMatch(in: html)
+                {
+                    descriptionText.string = fixDesc(description:String(match.0))
+                }
+            }
+            else
+            {
+                let matches = html.match(regex: "<meta name=\"Description\".*>")
+                if matches.count > 0
+                {
+                    descriptionText.string = fixDesc(description: matches[0].description)
+                }
             }
         }
     }
 }
 
+func fixDesc(description:String) -> String
+{
+    var desc = description
+    
+    //
+    // strip out cruft from desc
+    //
+    desc = desc.replacingOccurrences(of: "[\"<meta name=\\\"Description\\\" content=\\\"", with: "")
+    desc = desc.replacingOccurrences(of: "\\\" />\"]", with: "")
 
+    //
+    // replace special symbol codes with the symbol
+    //
+    desc = desc.replacingOccurrences(of: "‚Äú", with: "\"")
+    desc = desc.replacingOccurrences(of: "‚Äù", with: "\"")
+    desc = desc.replacingOccurrences(of: "‚Äô", with: "'")
+    desc = desc.replacingOccurrences(of: "\\\'", with: "'")
+    desc = desc.replacingOccurrences(of: "\\\"", with: "\"")
+    desc = desc.replacingOccurrences(of: " ‚Äì", with:",")
+    desc = desc.replacingOccurrences(of: "¬Æ", with:"®")
+    desc = desc.replacingOccurrences(of: "√Ø", with:"ï")
+    desc = desc.replacingOccurrences(of: "¬†", with:" ")
+    desc = desc.replacingOccurrences(of: "√©", with:"é")
+    desc = desc.replacingOccurrences(of: "√®", with:"è")
+    return desc
+}
 
 

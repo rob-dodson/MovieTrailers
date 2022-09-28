@@ -105,7 +105,7 @@ class Model: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate
 			//
 			// background load of poster image
 			//
-            DispatchQueue.global(qos: .userInitiated).async
+            DispatchQueue.global().async
             {
                 let url = trailer.makePosterURL(big: false)
                 

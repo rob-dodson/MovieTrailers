@@ -81,8 +81,15 @@ class Trailer : Decodable
         runtime = String(parts[0]) + " hr " + String(parts[1]) + " min"
         
         let date = map["releasedate"].element!.text
-        let parts1 = date.split(separator:"-")
-        releasedate = String(parts1[0])
+        if (date.count > 3)
+        {
+            let parts1 = date.split(separator:"-")
+            releasedate = String(parts1[0])
+        }
+        else
+        {
+            releasedate  = " - "
+        }
    }
     
     

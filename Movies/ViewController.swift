@@ -37,27 +37,30 @@ class ViewController: NSViewController, NSSearchFieldDelegate
         
         model = Model()
         
-        do
+        titleLabel.stringValue = " "
+        studioLabel.stringValue = " "
+        directorLabel.stringValue = " "
+        castLabel.stringValue = " "
+        infoLabel.stringValue = " "
+        websiteLabel.isHidden = true
+        descriptionText.string = " " // making it "" resets the font colors and sizes
+        
+        searchField.delegate = self
+        searchField.sendsWholeSearchString = false
+        searchField.sendsSearchStringImmediately = false
+        
+        errorLabel.isHidden = true
+        
+        DispatchQueue.global().async
         {
-            titleLabel.stringValue = " "
-            studioLabel.stringValue = " "
-            directorLabel.stringValue = " "
-            castLabel.stringValue = " "
-            infoLabel.stringValue = " "
-            websiteLabel.isHidden = true
-            descriptionText.string = " " // making it "" resets the font colors and sizes
-            
-            searchField.delegate = self
-            searchField.sendsWholeSearchString = false
-            searchField.sendsSearchStringImmediately = false
-            
-            errorLabel.isHidden = true
-            
-            try load()
-        }
-        catch
-        {
-            print("Error loading trailer list")
+            do
+            {
+                try self.load()
+            }
+            catch
+            {
+                print("Error in load()")
+            }
         }
     }
 
@@ -124,9 +127,13 @@ class ViewController: NSViewController, NSSearchFieldDelegate
         }
         
         model.setup(list: trailers,controller:self)
-        collectionView.dataSource = model
-        collectionView.delegate = model
-        collectionView.register(trailerViewItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "dataSourceItem"))
+        
+        DispatchQueue.main.async
+        {
+            self.collectionView.dataSource = self.model
+            self.collectionView.delegate = self.model
+            self.collectionView.register(trailerViewItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "dataSourceItem"))
+        }
     }
     
     
@@ -192,11 +199,23 @@ class ViewController: NSViewController, NSSearchFieldDelegate
 		// large poster
         //
         let url = trailer.makePosterURL(big: true)
-        if let image = NSImage(contentsOf: url)
-        {
-            imageView.image = image
+        
+        let session = URLSession.shared.dataTask(with: URLRequest(url: url))
+        { data, response, error in
+            
+            if data != nil
+            {
+                if let image = NSImage(data: data!)
+                {
+                    DispatchQueue.main.async
+                    {
+                        self.imageView.image = image
+                    }
+                }
+            }
         }
-
+        session.resume()
+        
         
 		//
 		// misc info
@@ -299,61 +318,64 @@ class ViewController: NSViewController, NSSearchFieldDelegate
 		//
         if trailer.description == nil
         {
-            do
-            {
-                try getDescription(trailer: trailer)
-            }
-            catch
-            {
-                print("Error getting description: \(error)")
-            }
+            getDescription(trailer: trailer)
         }
     }
 
     
-    func getDescription(trailer:Trailer) throws
+    /*
+     Sample description
+
+     https://trailers.apple.com/trailers/focus_features/the-northman/
+     
+    <meta name="Description" content="From visionary director Robert Eggers comes THE NORTHMAN, an action-filled epic that follows a young Viking prince on his quest to avenge his father’s murder.  With an all-star cast that includes Alexander Skarsgård, Nicole Kidman, Claes Bang, Anya Taylor-Joy, Ethan Hawke, Björk, and Willem Dafoe.">
+
+     */
+    func getDescription(trailer:Trailer)
     {
-        /*
-		 Sample description
-
-         https://trailers.apple.com/trailers/focus_features/the-northman/
-         
-        <meta name="Description" content="From visionary director Robert Eggers comes THE NORTHMAN, an action-filled epic that follows a young Viking prince on his quest to avenge his father’s murder.  With an all-star cast that includes Alexander Skarsgård, Nicole Kidman, Claes Bang, Anya Taylor-Joy, Ethan Hawke, Björk, and Willem Dafoe.">
-
-         */
-
-
         if let url = URL(string:"https://trailers.apple.com" + trailer.location)
         {
-            let html = try String(contentsOf: url, encoding: String.defaultCStringEncoding)
-            
-            print("html url: " + url.description)
-
-
-            if #available(macOS 13.0, *)
-            {
+            let session = URLSession.shared.dataTask(with: URLRequest(url: url))
+            { data, response, error in
                 
-                let regex = Regex {
-                    Capture {
-                        "<meta name=\"Description\""
-                        ZeroOrMore(.any)
-                        ">"
+                if data != nil
+                {
+                    if let html = String(data: data!, encoding: .utf8)
+                    {
+                        print("html url: " + url.description)
+                        
+                        let matches = html.match(regex: "<meta name=\"Description\".*>")
+                        if matches.count > 0
+                            {
+                            var desc = matches[0].description
+                            
+                            //
+                            // strip out cruft from desc
+                            //
+                            desc = desc.replacingOccurrences(of: "[\"<meta name=\\\"Description\\\" content=\\\"", with: "")
+                            desc = desc.replacingOccurrences(of: "\\\" />\"]", with: "")
+                            
+                            //
+                            // replace special symbol codes with the symbol
+                            //
+                            desc = desc.replacingOccurrences(of: "‚Äú", with: "\"")
+                            desc = desc.replacingOccurrences(of: "‚Äù", with: "\"")
+                            desc = desc.replacingOccurrences(of: "‚Äô", with: "'")
+                            desc = desc.replacingOccurrences(of: "\\\'", with: "'")
+                            desc = desc.replacingOccurrences(of: "\\\"", with: "\"")
+                            desc = desc.replacingOccurrences(of: " ‚Äì", with:",")
+                            desc = desc.replacingOccurrences(of: "¬Æ", with:"®")
+                            desc = desc.replacingOccurrences(of: "√Ø", with:"ï")
+                            
+                            DispatchQueue.main.async
+                            {
+                                self.descriptionText.string = desc
+                            }
+                        }
                     }
                 }
-                
-                if let match = try regex.firstMatch(in: html)
-                {
-                    descriptionText.string = fixDesc(description:String(match.0))
-                }
             }
-            else
-            {
-                let matches = html.match(regex: "<meta name=\"Description\".*>")
-                if matches.count > 0
-                {
-                    descriptionText.string = fixDesc(description: matches[0].description)
-                }
-            }
+            session.resume()
         }
     }
 }

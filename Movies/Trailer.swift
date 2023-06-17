@@ -68,18 +68,25 @@ class Trailer : Decodable
     
     func mapinfo(map: XMLIndexer)
     {
-       title       = map["title"].element!.text
-       rating      = map["rating"].element!.text
-       studio      = map["studio"].element!.text
-       postdate    = map["postdate"].element!.text
-       copyright   = map["copyright"].element!.text
-       directors   = map["director"].element!.text
-       description = map["description"].element!.text
+        title       = map["title"].element!.text
+        rating      = map["rating"].element!.text
+        studio      = map["studio"].element!.text
+        postdate    = map["postdate"].element!.text
+        copyright   = map["copyright"].element!.text
+        directors   = map["director"].element!.text
+        description = map["description"].element!.text
         
         let time = map["runtime"].element!.text
         let parts = time.split(separator:":")
-        runtime = String(parts[0]) + " hr " + String(parts[1]) + " min"
-        
+        if parts.count >= 2
+        {
+            runtime = String(parts[0]) + " hr " + String(parts[1]) + " min"
+        }
+        else
+        {
+            runtime = "?"
+        }
+    
         let date = map["releasedate"].element!.text
         if (date.count > 3)
         {

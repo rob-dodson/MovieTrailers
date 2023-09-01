@@ -97,9 +97,22 @@ class ViewController: NSViewController, NSSearchFieldDelegate
             
 			let json = try String(contentsOf: url)
 			let jsonData = json.data(using: .utf8)!
-            let jsontrailers : [Trailer] = try! JSONDecoder().decode([Trailer].self, from: jsonData)
+            do
+            {
+                let jsontrailers : [Trailer] = try JSONDecoder().decode([Trailer].self, from: jsonData)
+                trailers.append(contentsOf: jsontrailers)
+            }
+            catch
+            {
+                print("json error: \(error)")
+                DispatchQueue.main.async
+                {
+                    self.errorLabel.isHidden = false
+                    self.errorLabel.stringValue = "Sorry, Apple no longer maintains the website this app uses. [json error]"
+                }
+            }
             
-            trailers.append(contentsOf: jsontrailers)
+            
 		}
 
 

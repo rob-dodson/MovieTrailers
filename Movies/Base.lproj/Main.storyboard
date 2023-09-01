@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.AVKitIBPlugin" version="21701"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="22154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22154"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -753,7 +753,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IoU-cq-tlc">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IoU-cq-tlc">
                                 <rect key="frame" x="258" y="646" width="50" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Director" id="M0b-RK-1L9">
                                     <font key="font" size="13" name="HelveticaNeue"/>
@@ -761,7 +761,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Wg-LN-7st">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Wg-LN-7st">
                                 <rect key="frame" x="258" y="679" width="439" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="435" id="FV7-Kc-HkZ"/>
@@ -781,7 +781,7 @@
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="R1Y-PI-udn"/>
                             </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bjO-bq-em0">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bjO-bq-em0">
                                 <rect key="frame" x="258" y="625" width="50" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Starring" id="1pe-Oj-Qes">
                                     <font key="font" size="13" name="HelveticaNeue"/>
@@ -789,7 +789,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oWu-JN-xls">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oWu-JN-xls">
                                 <rect key="frame" x="258" y="726" width="653" height="36"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Title" id="qR3-uE-Zan">
                                     <font key="font" size="30" name="HelveticaNeue-CondensedBold"/>
@@ -797,7 +797,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DSN-YS-t2d">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DSN-YS-t2d">
                                 <rect key="frame" x="258" y="707" width="262" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="4Eb-Bs-Gjp"/>
@@ -809,7 +809,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Knk-oW-KuN">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Knk-oW-KuN">
                                 <rect key="frame" x="314" y="584" width="338" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="334" id="e1C-aV-XJn"/>
@@ -821,7 +821,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-Sg-7hC">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ngc-Sg-7hC">
                                 <rect key="frame" x="314" y="645" width="89" height="15"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Director Name" id="0Ez-6Q-tTw">
                                     <font key="font" size="13" name="HelveticaNeue"/>
@@ -868,7 +868,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzX-25-Uub">
+                            <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzX-25-Uub">
                                 <rect key="frame" x="25" y="735" width="225" height="22"/>
                                 <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="3tT-zZ-hZ5">
                                     <font key="font" metaFont="system"/>
@@ -879,8 +879,8 @@
                                     <action selector="searchAction:" target="XfG-lQ-9wD" id="nDo-LC-cNt"/>
                                 </connections>
                             </searchField>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yzi-VH-KNP">
-                                <rect key="frame" x="273" y="418" width="375" height="16"/>
+                            <textField hidden="YES" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yzi-VH-KNP">
+                                <rect key="frame" x="273" y="418" width="453" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="error" id="ix4-cq-x7d">
                                     <font key="font" metaFont="system"/>
@@ -888,7 +888,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e9m-cp-dqp" customClass="ClickableLabel" customModule="MovieTrailers" customModuleProvider="target">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e9m-cp-dqp" customClass="ClickableLabel" customModule="MovieTrailers" customModuleProvider="target">
                                 <rect key="frame" x="863" y="421" width="47" height="12"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Website" placeholderString="website" id="8Jg-Sq-S4O">
                                     <font key="font" metaFont="smallSystem"/>
